@@ -11,7 +11,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
-
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
       <!-- bootstrp cdn link -->
@@ -23,36 +23,44 @@
   </head>
   <body>
     <div>
-    <div class="container">
-    <form class="login100-form" action="workshop_new.php" method="POST" enctype="multipart/form-data">
-      <h1><div class="login100-form-title">
+    <div>
+    
+    <form class="form-group" action="workshop_new.php" method="POST" enctype="multipart/form-data">
+    <h1><div class="login100-form-title">
         Workshop
      </div></h1>
+     <div class="formGroup"> 
       <label class="Sdrn">SDRN:<span class="required">*</span></label>
-      <input type="text" required name="SDRN" placeholder="enter the number" value="<?php echo $user_check;?>">
-      <br><br>
+      <input type="text" class="form-control" required name="SDRN" placeholder="enter the number" value="<?php echo $user_check;?>">
+    </div>
+    <div class="formGroup"> 
       <label class="Name">Name of faculty:<span class="required">*</span></label>
-      <input type="text" required name="Name of faculty" placeholder="enter the name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>">
-      <br><br>
-	                
+      <input type="text" class="form-control" required name="Name of faculty" placeholder="enter the name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>">
+    </div>
+	  <div class="formGroup">               
                   <label for="Criteria">Criteria<span class="required"> *</span></label>
-                  <input list="Criteria" id="select-criteria" name="criteria" required/>
+                  <input list="Criteria" class="form-control" id="select-criteria" name="criteria" required/>
                       <datalist id="Criteria">
                           <option value="Workshop">
                           <option value="STTP">  
                           <option value="Training Program">
                           <option value="FDP" >      
-                      </datalist><br><br>
+                      </datalist>
+    </div>
+    <div class="formGroup"> 
       <label class="Seminar">Name of Workshop:<span class="required">*</span></label>
-      <input type="text" required name="Name of Seminar/Webinar" placeholder="enter the name">
-      <br><br>
+      <input type="text" class="form-control" required name="Name of Seminar/Webinar" placeholder="enter the name">
+
+    </div>
+    <div class="formGroup"> 
       <label class="event">Sponsorship received for event from:<span class="required">*</span></label>
-      <input type="text" name="Sponsor received for event from" required placeholder="enter the name">
-      <br><br>
+      <input type="text" class="form-control"name="Sponsor received for event from" required placeholder="enter the name">
+    </div>
+    <div class="formGroup"> 
       <label class="venue">Venue:<span class="required">*</span></label>
-          <input list="all-collage" required id="venue" name="Venue" onchange="changevenue()"><br><br><!-- data list of id all-collage is placed and end of body  -->
+          <input list="all-collage" class="form-control" required id="venue" name="Venue" onchange="changevenue()"><!-- data list of id all-collage is placed and end of body  -->
           <div id="new_venue_box" style="display: none;">
-            <input type="text" name="new_venue" id ="new_venue" placeholder=" Enter venue name"  required ><br><br>
+            <input type="text" name="new_venue" id ="new_venue" placeholder=" Enter venue name"  required >
           </div>
           <script>
             function changevenue(){
@@ -69,6 +77,7 @@
               }
             }
           </script>
+    </div>  
           <datalist id="all-collage">
  <!-- copy pasted from result.txt file for searchable dropdown of venue -->
                 <option value="Other">
@@ -114,16 +123,18 @@
 <option value = "Yadavrao Tasgaonkar Institute of Engineering & Technology�(YTIET),�Bhivpuri">
  </datalist>
       <label class="date">DATE<span class="required">*</span></label>
-    <br><br>
+    <div class="formGroup"> 
+      <label for="From">From:</label>
+      <input id="startDate"  class="form-control" type="date" required ata-date="" name="Date_From" data-date-format="DD/MM/YYYY" placeholder="DD/MM/YYYY" onchange="cal()">
+    </div>
+    <div class="formGroup"> 
       <label for="To">To:</label>
-      <input id="endDate" type="date" required ata-date="" name="Date_To" data-date-format="DD/MM/YYYY" placeholder="DD/MM/YYYY" onchange="cal()">
-    <br><br>
-    <label for="From">From:</label>
-    <input id="startDate" type="date" required ata-date="" name="Date_From" data-date-format="DD/MM/YYYY" placeholder="DD/MM/YYYY" onchange="cal()">
-  <br><br>
-  <label class="days">No.of days:<span class="required">*</span></label>
-  <input id="noOfDays" type="number" required name="Days"  placeholder="enter the no.of days" style="width: 132px;">
-  <br><br>
+      <input id="endDate"  class="form-control" type="date" required ata-date="" name="Date_To" data-date-format="DD/MM/YYYY" placeholder="DD/MM/YYYY" onchange="cal()">
+    </div>
+    <div class="formGroup"> 
+      <label class="days">No.of days:<span class="required">*</span></label>
+      <input id="noOfDays" class="form-control" type="number" required name="Days"  placeholder="enter the no.of days" style="width: 132px;">
+    </div>
   <script type="text/javascript">
 
     function cal(){
@@ -140,31 +151,34 @@ if(noday.value<0)
         //write code for wrong end date i.e -ve noOfDays value
     }
  } 
-</script>  
+</script>
+<div class="formGroup">   
   <label class="Organiser">Organiser:<span class="required">*</span></label>
-  <input type="text"required name="Organiser" value="" placeholder="enter the name">
-  <br><br>
+  <input type="text" class="form-control" required name="Organiser" value="" placeholder="enter the name">
+</div>
+<div class="formGroup"> 
   <label class="choose">Level:<span class="required">*</span></label>
-    <select class="Choose" required id="Choose" name="Local/State/National/International">
+    <select id="Choose" class="form-control" required id="Choose" name="Local/State/National/International">
      <option value="local">Local</option>
      <option value="state">State</option>
      <option value="National">National</option>
      <option value="International">International</option>
    </select>
-  <br><br>
+</div>
+<div class="formGroup"> 
   <label class="Funding">Source of Funding:<span class="required">*</span></label>
-   <select id="Source" name="Source of Funding" onchange="funding(this);">
+   <select id="Source"  class="form-control" name="Source of Funding" onchange="funding(this);">
      <option disabled selected value> -- select an option -- </option>
      <option value="Self">Self</option>
      <option value="Other">Other
      </option>
         
-   </select><br><br>
+   </select>
+
    <div id="other_source_box">
-     <input type="text" id="other_source" name="Other_source" placeholder="enter Source of Funding" style="display: none;" ><br>
+     <input type="text"  class="form-control"id="other_source" name="Other_source" placeholder="enter Source of Funding" style="display: none;" >
   </div>
-
-
+</div>
 <script type="text/javascript">
   function funding(src){
       if(src.value=="Other"){
@@ -181,27 +195,24 @@ if(noday.value<0)
 
   }
  </script>
-
+<div class="formGroup"> 
   <label class="Amount">Registration Amount:<span class="required">*</span></label>
-    <input type="number" required name="Registration Amount" value="" placeholder="enter the amount">
-    <br><br>
+    <input type="number"  class="form-control" required name="Registration Amount" value="" placeholder="enter the amount">
+</div>
+<div class="formGroup"> 
     <label class="Amount">Amount funded:<span class="required">*</span></label>
-   <input type="number" name="Amount funded" id="amt" value="" placeholder="enter the amount">
-   <br><br>
-
-
+   <input type="number"  class="form-control" name="Amount funded" id="amt" value="" placeholder="enter the amount">
+</div>
+<div class="formGroup"> 
   <label class="Allowance">Travelling Allowance:<span class="required">*</span></label>
-   <select id="TA" name="TA" onclick="allowance(this);" >
+   <select  class="form-control" id="TA" name="TA" onclick="allowance(this);" >
      <option value="No">NA</option>
      <option value="Yes">YES</option>
    </select>
-  <br><br>
-
   <div id="Amt">
-    <label class="Amt" required>Amount<span class="required">*</span></label>
-    <input type="number" required name="TA1" placeholder="enter the amount">
-    <br><br>
+    <input type="number"  class="form-control" required name="TA1" placeholder="enter the amount">
   </div>
+</div>
   <script type="text/javascript">
       function allowance(amt){
         if(amt.value=="Yes"){
@@ -213,10 +224,9 @@ if(noday.value<0)
       }
   
   </script>
- <input type="file" name="file" size="50" required />
-<br><br>
-<input type="submit" name="Next" action="">  
- <input type="reset" value="Clear" >
+ <input  class="form-control" type="file" name="file" size="50" required /><br>
+<input type="submit" class="btn btn-danger" name="Next" action="">  
+ <input type="reset" class="btn btn-danger" value="Clear">
 
 
 

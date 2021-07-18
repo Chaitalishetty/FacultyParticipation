@@ -3,47 +3,50 @@
 <?php
   include('session.php');
 ?>
-<html class="no-js" lang="English">
+<html lang="English">
 
 <head>
 <meta charset="utf-8">
     <title>Orientation</title><meta name="description" content="">
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
-
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
       <!-- bootstrp cdn link -->
-
-    <meta name="theme-color" content="#fafafa">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
  
 </head>
 
 <body>
 <div>
-    <div >
-       <form action="orientation.php" method="POST" enctype="multipart/form-data">
-        <h2 class="h1">University Orientation</h2>  
-        <label class="SDRN">SDRN:<span class="required">*</span>  </label>
-        <input type="text" required name="SDRN" placeholder="SDRN" value="<?php echo $user_check;?>"><br><br>
-        <div>
-        <label for="name">Name of faculty:<span class="required">*</span>:</label>
-        <input type="text" name="Name" id="" placeholder="enter full name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>" required/>
+
+       <form action="orientation.php" method="POST" class="form-group" enctype="multipart/form-data">
+       <h1><div class="login100-form-title">
+        University Orientation
+     </div></h1>
+        <div class="formGroup">       
+          <label class="SDRN">SDRN<span class="required">*</span>:</label>
+          <input type="text" class="form-control" required name="SDRN" placeholder="SDRN" value="<?php echo $user_check;?>" readonly>
         </div>
-		<label class="University" name="University">University:<span class="required">*</span>  </label>
-  <input type="text" required name="University" placeholder=" "><br><br>
-
-               <label  class="name" for="orientSub">Orientation Subject:<span class="required">*</span>:</label>
-               <input type="text" name="Subject" id="" placeholder="Orientation Subject" required ><br><br>
-
-              <label for="sem">Semester<span class="required">*</span>:</label>
-
-              <select name="Semester" id="sem" required >
-              <option name="Semester" value="default selected">select sem</option>
-            
+        <div class="formGroup"> 
+          <label for="name">Name of faculty<span class="required">*</span>:</label>
+          <input type="text" name="Name" class="form-control" placeholder="enter full name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>" required readonly/>
+        </div>
+        <div class="formGroup"> 
+          <label class="University" name="University">University<span class="required">*</span>  </label>
+          <input type="text" required name="University" placeholder="University"class="form-control">
+        </div>
+        <div class="formGroup"> 
+          <label  class="name" for="orientSub">Orientation Subject<span class="required">*</span>:</label>
+          <input type="text" name="Subject" class="form-control" placeholder="Orientation Subject" required >
+        </div>
+        <div class="formGroup"> 
+          <label for="sem">Semester<span class="required">*</span>:</label>
+          <select name="Semester" id="sem" required class="form-control">
+              <option name="Semester" value="default selected">select sem</option>            
               <option value="1">I</option>  
               <option value="2">II</option>  
               <option value="3">III</option>  
@@ -53,46 +56,40 @@
               <option value="7">VII</option> 
               <option value="8">VIII</option>  
          
-        </select><br><br>
+        </select>
+        </div>
+        <div class="formGroup"> 
+            <label class="venue">Venue:<span class="required">*</span></label>
+              <input list="all-collage" class="form-control" required id="venue" name="Venue" onchange="changevenue()"><!-- data list of id all-collage is placed and end of body  -->
+              <div id="new_venue_box" style="display: none;">
+                <input type="text" name="new_venue" id ="new_venue" placeholder=" Enter venue name"  required >
+              </div>
+              <script>
+                function changevenue(){
+                  var option=(document.getElementById("venue").value);
+                  if(option=="Other"){
+                    document.getElementById("new_venue_box").style.display="block";
+                    var x=(document.getElementById("new_venue").value);
+                    //document.getElementById("venue").value=x;
+                  }
+                  else{
+                    document.getElementById("new_venue_box").style.display="none";
+                    document.getElementById("new_venue").defaultValue="NA";                
+                    
+                  }
+                }
+              </script>
 
-              
-
- <label class="venue">Venue:<span class="required">*</span></label>
-          <input list="all-collage" required id="venue" name="Venue" onchange="changevenue()"><br><br><!-- data list of id all-collage is placed and end of body  -->
-          <div id="new_venue_box" style="display: none;">
-            <input type="text" name="new_venue" id ="new_venue" placeholder=" Enter venue name"  required ><br><br>
-          </div>
-          <script>
-            function changevenue(){
-              var option=(document.getElementById("venue").value);
-              if(option=="Other"){
-                document.getElementById("new_venue_box").style.display="block";
-                var x=(document.getElementById("new_venue").value);
-                //document.getElementById("venue").value=x;
-              }
-              else{
-                document.getElementById("new_venue_box").style.display="none";
-                document.getElementById("new_venue").defaultValue="NA";                
-                
-              }
-            }
-          </script>
-
-
-
-
-
-
-
-
-
+        </div>
+        <div class="formGroup">     
               <label class="date" for="date">Date<span class="required">*</span>:</label>
-              <input type="date" name="Date" id="date" > <br><br>
-
- <input type="file" name="file" size="50" />
-              <input class="button" type="submit" name="Next" action="">
-              <button class="button" value="" name="next page">next </button> 
-              <button class="button" value="" name="previous page">previous </button> 
+              <input type="date" class="form-control" name="Date" id="date" >
+        </div>
+        
+        <input type="file" name="file" size="50" class="form-control"/><br>
+        <input type="submit" class="btn btn-danger" name="Next" action="">  
+      <input type="reset" class="btn btn-danger" value="Clear">
+      
       </form>
     </div>
 </div>

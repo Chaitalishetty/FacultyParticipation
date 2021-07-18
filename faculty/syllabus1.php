@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <title>Syllabus</title><meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -23,32 +24,33 @@
  
         </head>
         <body>
-        <div class="container">
-         <form class="login100-form" action="syllabus.php" method="post"  enctype="multipart/form-data">
+        <div>
+         <form class="form-group" action="syllabus.php" method="post"  enctype="multipart/form-data">
            
-            <h1 class="h1"><div class="login100-form-title">Syllabus Settings :<div></h1> 
-            <label class="SDRN">SDRN: <span class="required">*</span></label>
-            <input type="text" required name="SDRN" placeholder="SDRN" value="<?php echo $user_check;?>"><br><br>
-           
+            <h1 class="h1"><div class="login100-form-title">Syllabus Settings<div></h1> 
+            <div class="formGroup"> 
+              <label class="SDRN">SDRN: <span class="required">*</span></label>
+              <input type="text" class="form-control" required name="SDRN" placeholder="SDRN" value="<?php echo $user_check;?>"readonly>
+            </div>  
           
-           <div  class="">
+           <div class="formGroup">
              <label class="name" for="name">Name of the faculty :<span class="required">*</span></label>
-             <input type="text" name="Name" placeholder="Enter the name" required  value="<?php echo $login_session; echo" " ;echo $login_sess;?>"/>
+             <input type="text" class="form-control" name="Name" placeholder="Enter the name" required  readonly value="<?php echo $login_session; echo" " ;echo $login_sess;?>"/>
             </div>
           
-           <div>
+           <div class="formGroup">
              <label id="university" for="university">Name of the university :<span class="required">*</span></label>
-             <input type="text" name="University" placeholder="University" required>
+             <input type="text" class="form-control" name="University" placeholder="University" required>
             </div>
             
-            <div>
+            <div class="formGroup">
              <label id="subject" for="subject">Subject  :<span class="required">*</span></label>
-             <input type="text" name="Subject" placeholder="Enter the subject" required/>
+             <input type="text" class="form-control" name="Subject" placeholder="Enter the subject" required/>
             </div>
 
-            <div>
+            <div class="formGroup">
              <label class="Semester" id="Semester" for="Semester">Semester :<span class="required">*</span></label>
-             <select type="dropdown" name="Semester" required>
+             <select type="dropdown" class="form-control" name="Semester" required>
               <option disabled selected value>Select sem</option>
                <option value="1">I</option>
                <option value="2">II</option>
@@ -59,11 +61,12 @@
                <option value="7">VII</option>
                <option value="8">VIII</option>
               </select> 
-             </div>
-            
-           <label class="venue">Venue:<span class="required">*</span></label>
-          <input list="all-collage" required id="venue" name="Venue" onchange="changevenue()"><br><br><!-- data list of id all-collage is placed and end of body  -->
-          <div id="new_venue_box" style="display: none;">
+            </div>
+            <div class="formGroup">
+              <label class="venue">Venue:<span class="required">*</span></label>
+              <input list="all-collage" class="form-control" required id="venue" name="Venue" onchange="changevenue()"><!-- data list of id all-collage is placed and end of body  -->
+            </div>
+          <div id="new_venue_box" class="formGroup" style="display: none;">
             <input type="text" name="new_venue" id ="new_venue" placeholder=" Enter venue name"  required ><br><br>
           </div>
           <script>
@@ -88,17 +91,15 @@
 
 
             
-             <div class="date" >
+             <div class="formGroup" >
               <label id="date" for="date">Date :<span class="required">*</span></label>
-              <input type="date" name="Date" data-date="" data-date-format="DD/MM/YYYY" placeholder="DD/MM/YYYY">  
+              <input type="date" class="form-control" name="Date" data-date="" data-date-format="DD/MM/YYYY" placeholder="DD/MM/YYYY">  
             </div>
              <div>
-			 <input type="file" name="file" size="50" />
-              <input class="button" type="submit" name="Next" action="">
+			 <input type="file" class="form-control" name="file" size="50" /><br>
+       <input type="submit" class="btn btn-danger" name="Next" action="">  
+      <input type="reset" class="btn btn-danger" value="Clear">
 
-              <button class="button" value="" name="next page">next </button>
-
-              <button class="button" value="" name="previous page">previous </button> 
 
               </div>
          </form>
