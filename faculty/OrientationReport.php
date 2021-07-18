@@ -77,7 +77,8 @@
             <th>Subject</th>
             <th>Semester</th>
             <th>Venue</th>
-            <th>Date</th>    
+            <th>Date</th>
+            <th>Document</th>    
         </tr>
     
         <?php
@@ -108,6 +109,7 @@ $sdrn=$user_check;
                             echo "<td>" . $row['Semester'] . "</td>";
                             echo "<td>" . $row['Venue'] . "</td>";
                             echo "<td>" . $row['Date'] . "</td>";
+                            echo "<td>" . $row['uploads'] . "</td>";
                     echo "</tr>";
                 }
             //}

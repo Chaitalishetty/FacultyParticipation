@@ -87,21 +87,21 @@ h2{
  
 }
 
-.col-sm-2 a{
+.col-sm-4 a{
     color:white;
     font-size: 100%;    
     font-weight: bold;
     text-align: center;
     
 }
-.col-sm-2 a:hover{
+.col-sm-4 a:hover{
     text-decoration-line: none;
     font-size: 100%;  
     display: block;
     color: white;
 
 }
-.col-sm-2{
+.col-sm-4{
 
     position: relative;
 
@@ -112,7 +112,7 @@ h2{
     background: linear-gradient(rgb(4, 10, 95),rgb(61, 54, 161));
     box-shadow: 5px 5px 11px 3px #838383;
 }
-.col-sm-2:hover{
+.col-sm-4:hover{
 
     position: relative;
 

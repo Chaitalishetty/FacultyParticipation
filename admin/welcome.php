@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Demo</title>
+        <title>Admin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -26,20 +26,20 @@
         </div>
         <div class="jumbotron text-center" style="background-color:transparent">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                       <a href="SortOrientation.php" name="University">UNIVERSITY ORIENTATION</a>
                     
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="SortSyllabus.php" name="Syllabus">SYLLABUS SETTING</a>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="SortCources.php" name="Courses">COURSES ATTENDED</a>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="SortWorkshop.php" name="Worshops">WORKSHOPS - STTP - FDP</a>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="SortSeminar.php" name="Seminar">SEMINAR / WEBINAR</a>
                 </div>
             

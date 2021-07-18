@@ -24,13 +24,19 @@ if($link === false){
         $count = mysqli_num_rows($result);  
           
         if($count == 1){  
+            if($username=='150'){
+                header("location: ../admin/welcome.php");
+            }
+            else{
+                 
+                 header("location: welcome.php");
+            }
            // echo "<h1><center> Login successful </center></h1>";  
 
 
 //session_register("username");
          $_SESSION['login_user'] = $username;
-         
-         header("location: welcome.php");
+        
 
         }  
         else{  

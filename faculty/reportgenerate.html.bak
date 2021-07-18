@@ -22,20 +22,20 @@
             <h2>Select any block for report generation</h2>
           </div>
           <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-4">
                   <a href="OrientationReport.php" name="University">UNIVERSITY ORIENTATION</a>
                 
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4">
                 <a href="SyllabusReport.php" name="Syllabus">SYLLABUS SETTING</a>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4">
                 <a href="CourseReport.php" name="Courses">COURSES ATTENDED</a>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4">
                 <a href="WorkshopReport.php" name="Worshops">WORKSHOPS - STTP - FDP</a>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4">
                 <a href="SeminarReport.php" name="Seminar">SEMINAR / WEBINAR</a>
             </div>
             

@@ -26,20 +26,20 @@
         </div>
         <div class="jumbotron text-center" style="background-color:transparent">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                       <a href="orientation 1.php" name="University">UNIVERSITY ORIENTATION</a>
                     
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="syllabus1.php" name="Syllabus">SYLLABUS SETTING</a>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="courses1.php" name="Courses">COURSES ATTENDED</a>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="workshop_new1.php" name="Worshops">WORKSHOPS - STTP - FDP</a>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="seminar1.php" name="Seminar">SEMINAR / WEBINAR</a>
                 </div>
             
