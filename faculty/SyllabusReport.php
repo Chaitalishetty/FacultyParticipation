@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>orientation</title>
+<title>Syllabus</title>
 <style>
     
     table {
         border-collapse: collapse;
         width: 100%;
         color: #588c7e;
-        font-family: monospace;
         font-size: 25px;
         text-align: left;
     }
     th {
+        padding: 10px;
         background-color: #588c7e;
         color: white;
     }
@@ -32,9 +32,12 @@
     padding: .67em .67em;
     cursor: pointer;
     }
+    .btn:hover{
+        opacity:0.9;
+    }
     .btn-primary {
     color: white;
-    background-color: #56CCF2;
+    background-color:#429dbb;
     border: none;
     border-radius: .3em;
     font-weight: bold;
@@ -56,9 +59,10 @@
 </style>
 </head>
 <body>
-<h2>***  Data of Syllabus Setting  ***</h2>
-
-<br>
+<nav class="navbar">
+<a href="welcome.php"><img src="images/logo.jpg" height="100px"></a>
+<nav>
+<h2>Data of Syllabus Setting</h2>
 
 <div class="container">
     <center>
@@ -71,7 +75,7 @@
     
         <tr>
            
-            <th>sdrn</th>
+            <th>SDRN</th>
             <th>Name Of Faculty</th>
             <th>University</th>
             <th>Subject</th>

@@ -15,8 +15,8 @@
         
         <!--logo-->
         <div style="display:flex;justify-content:space-between">
-            <img src="images/logo.jpg" height="10vw">
-            <h2>Welcome <?php echo $login_session;?>(Admin)</h2>
+            <a href="welcome.php"><img src="images/logo.jpg" height="100px"></a>
+            <h2 class="welcomeHead">Welcome <?php echo $login_session;?>(Admin)</h2>
             <div style="display:flex;justify-content:space-between">
                 <div id="buttons"><a href="../faculty/welcome.php">Faculty</a></div>
                 <div id="buttons"><a href = "logout.php">Sign Out</a></div>

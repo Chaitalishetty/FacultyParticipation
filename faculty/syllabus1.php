@@ -99,6 +99,7 @@
 			 <input type="file" class="form-control" name="file" size="50" /><br>
        <input type="submit" class="btn btn-danger" name="Next" action="">  
       <input type="reset" class="btn btn-danger" value="Clear">
+      <a href="welcome.php" class="btn btn-danger">Go back to homepage</a>
 
 
               </div>

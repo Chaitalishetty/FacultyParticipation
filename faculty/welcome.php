@@ -17,7 +17,7 @@
         <!--logo-->
         <div style="display:flex;justify-content:space-between">
             <img src="images/logo.jpg" alt="logo" height="100px">
-            <h2>Welcome <?php echo $login_session;?></h2>
+            <h2 class="welcomeHead">Welcome <?php echo $login_session;?></h2>
             <div style="display:flex;justify-content:space-between">
             <?php 
                 if($user_check=='150'){

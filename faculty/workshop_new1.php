@@ -6,7 +6,7 @@
   <head>
     
     <meta charset="utf-8">
-    <title>Seminar</title><meta name="description" content="">
+    <title>Workshop</title><meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
@@ -24,8 +24,8 @@
   <body>
     <div>
     <div>
-    
     <form class="form-group" action="workshop_new.php" method="POST" enctype="multipart/form-data">
+    
     <h1><div class="login100-form-title">
         Workshop
      </div></h1>
@@ -227,6 +227,7 @@ if(noday.value<0)
  <input  class="form-control" type="file" name="file" size="50" required /><br>
 <input type="submit" class="btn btn-danger" name="Next" action="">  
  <input type="reset" class="btn btn-danger" value="Clear">
+ <a href="welcome.php" class="btn btn-danger">Go back to homepage</a>
 
 
 
