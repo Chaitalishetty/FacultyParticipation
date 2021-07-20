@@ -59,6 +59,22 @@
                 </div>     
             
             </div>
+            <div class="row">
+                <div class="col-sm-4">
+                <div class="card">
+                      <a href="UpDelOrientation.php" name="University">Update or delete university orientation</a>   
+                </div>                
+                </div>
+                <div class="col-sm-4">
+                <div class="card">
+                    <a href="UpDelSyllabus.php" name="Syllabus">Update or delete syllabus setting</a>
+                </div>
+                </div>     
+                <div class="col-sm-4">
+                <div class="card">
+                    <a href="UpDelWorkshop.php" name="Worshops">Update or delete workshops</a>
+                </div>
+            </div>
           
         </div>
         
