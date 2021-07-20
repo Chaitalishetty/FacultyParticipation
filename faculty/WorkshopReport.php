@@ -147,14 +147,3 @@ $sdrn=$user_check;
 </h2>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

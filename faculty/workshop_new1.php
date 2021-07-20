@@ -38,7 +38,7 @@
       <input type="text" class="form-control" required name="Name of faculty" placeholder="enter the name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>">
     </div>
 	  <div class="formGroup">               
-                  <label for="Criteria">Criteria<span class="required"> *</span></label>
+                  <label for="Criteria">Criteria :<span class="required"> *</span></label>
                   <input list="Criteria" class="form-control" id="select-criteria" name="criteria" required/>
                       <datalist id="Criteria">
                           <option value="Workshop">
@@ -133,22 +133,20 @@
     </div>
     <div class="formGroup"> 
       <label class="days">No.of days:<span class="required">*</span></label>
-      <input id="noOfDays" class="form-control" type="number" required name="Days"  placeholder="enter the no.of days" style="width: 132px;">
+      <input disabled id="noOfDays" class="form-control" type="number" required name="Days"  placeholder="enter the no.of days" >
     </div>
   <script type="text/javascript">
 
     function cal(){
  var start=new Date(document.getElementById("startDate").value);
  var end =new Date(document.getElementById("endDate").value);
- 
- //console.log((end-start)/(24*3600*1000));
+
  var noday=document.getElementById("noOfDays");
  noday.value = ((end-start)/(24*3600*1000))+1;
-if(noday.value<0)
+if(noday.value<= 0)
     {
       alert("Please select valid end date ");
       document.getElementById("noOfDays").value="00";
-        //write code for wrong end date i.e -ve noOfDays value
     }
  } 
 </script>
@@ -171,12 +169,11 @@ if(noday.value<0)
      <option disabled selected value> -- select an option -- </option>
      <option value="Self">Self</option>
      <option value="Other">Other
-     </option>
-        
+     </option>        
    </select>
 
    <div id="other_source_box">
-     <input type="text"  class="form-control"id="other_source" name="Other_source" placeholder="enter Source of Funding" style="display: none;" >
+     <input type="text"  class="form-control" id="other_source" name="Other_source" placeholder="enter Source of Funding" style="display: none;" >
   </div>
 </div>
 <script type="text/javascript">

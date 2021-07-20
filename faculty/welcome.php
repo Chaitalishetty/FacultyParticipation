@@ -38,7 +38,7 @@
                 
         </div>
         <div id="gen">
-            <a href="reportgenerate.html">GENERATE REPORT</a>
+            <a href="reportgenerate.html">GENERATE PERSONAL REPORTS</a>
         </div>
         <div class="jumbotron text-center" style="background-color:transparent">
             <div class="row">
