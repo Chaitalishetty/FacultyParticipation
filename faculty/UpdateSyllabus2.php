@@ -8,7 +8,6 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
  $id3=$_GET['id2'];
- echo "id=".$id3;
 $sdrn = mysqli_real_escape_string($link, $_REQUEST['SDRN']);
 $name = mysqli_real_escape_string($link, $_REQUEST['Name']);
 $uni = mysqli_real_escape_string($link, $_REQUEST['University']);
