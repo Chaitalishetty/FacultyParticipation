@@ -98,6 +98,7 @@
             <th>Semester</th>
             <th>Venue</th>
             <th>Date</th>
+            <th>Document</th> 
         </tr>
     
     <br>
@@ -137,7 +138,7 @@ if(isset($_POST['search']))
 
 
     while($row = @mysqli_fetch_array($count)){
-        
+        $doc = '../faculty/'. $row['uploads'];
         echo "<tr>"; 
         
             echo "<td>" . $row['sr'] . "</td>"; 
@@ -148,7 +149,8 @@ if(isset($_POST['search']))
             echo "<td>" . $row['Semester'] . "</td>";
             echo "<td>" . $row['Venue'] . "</td>";
             echo "<td>" . $row['Date'] . "</td>";
-           
+            echo "<td><a href='".$doc."'>Doc</a></td>";
+            
 
         echo "</tr>";
     }        

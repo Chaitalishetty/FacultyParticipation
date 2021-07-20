@@ -62,17 +62,17 @@
             <div class="row">
                 <div class="col-sm-4">
                 <div class="card">
-                      <a href="UpDelOrientation.php" name="University">Update or delete university orientation</a>   
+                      <a href="UpDelOrientation.php" name="University">Update University Orientation</a>   
                 </div>                
                 </div>
                 <div class="col-sm-4">
                 <div class="card">
-                    <a href="UpDelSyllabus.php" name="Syllabus">Update or delete syllabus setting</a>
+                    <a href="UpDelSyllabus.php" name="Syllabus">Update Syllabus Setting</a>
                 </div>
                 </div>     
                 <div class="col-sm-4">
                 <div class="card">
-                    <a href="UpDelWorkshop.php" name="Worshops">Update or delete workshops</a>
+                    <a href="UpDelWorkshop.php" name="Worshops">Update Workshops</a>
                 </div>
             </div>
           

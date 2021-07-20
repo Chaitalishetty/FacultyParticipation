@@ -55,7 +55,7 @@ else {
 }
  
 // Attempt insert query execution
-$sql = "INSERT INTO syllabus (SDRN, Name, University, Subject,Semester, Venue, Date) VALUES ('$sdrn', '$name', '$uni','$sub', '$sem', '$finalvenue', '$date')";
+$sql = "INSERT INTO syllabus (SDRN, Name, University, Subject,Semester, Venue, Date ,uploads) VALUES ('$sdrn', '$name', '$uni','$sub', '$sem', '$finalvenue', '$date' ,'$targetfolder')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
     echo "<a href='welcome.php'>Go back to homepage<a><br>";

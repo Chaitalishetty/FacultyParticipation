@@ -73,7 +73,7 @@ else {
 // Attempt insert query execution
 //$sql = "INSERT INTO workshop (SDRN, Name_of_faculty, criteria,Name_of_Seminar, Sponsorship, Venue, Datr_To ,Date_From, Days, Organiser, level, Source_of_Funding, Registration_Amount, Amount_funded, TA) VALUES ('$sdrn','$name','$cri','$sem', '$spon', '$ven', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta')";
 
-$sql = "INSERT INTO workshop (SDRN, Name, criteria,Name_workshop, sponsor, venue, sdate, edate, ndays, organiser, org_type, sfunding, ramount, amount_funded ,TA) VALUES ('$sdrn','$name','$cri','$sem','$spon','$finalvenue', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta')";
+$sql = "INSERT INTO workshop (SDRN, Name, criteria,Name_workshop, sponsor, venue, sdate, edate, ndays, organiser, org_type, sfunding, ramount, amount_funded ,TA ,uploads) VALUES ('$sdrn','$name','$cri','$sem','$spon','$finalvenue', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta','$targetfolder')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
     echo "<a href='welcome.php'>Go back to homepage<br><a>";

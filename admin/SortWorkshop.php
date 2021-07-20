@@ -105,6 +105,7 @@
             <th>Registration_Amount</th>
             <th>Amount_Funded</th>
             <th>TA</th>
+            <th>Document</th>  
         </tr>
     
     <br>
@@ -141,7 +142,7 @@ if(isset($_POST['search']))
 
 
     while($row = @mysqli_fetch_array($count)){
-        
+        $doc = '../faculty/'. $row['uploads'];
         echo "<tr>"; 
             
             echo "<td>" . $row['sr'] . "</td>";
@@ -160,7 +161,7 @@ if(isset($_POST['search']))
             echo "<td>" . $row['Registration_Amount'] . "</td>"; 
             echo "<td>" . $row['Amount_Funded'] . "</td>"; 
             echo "<td>" . $row['TA'] . "</td>"; 
-            
+            echo "<td><a href='".$doc."'>$doc </td></a>";
 
 
         echo "</tr>";

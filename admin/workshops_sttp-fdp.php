@@ -68,6 +68,7 @@
         <th>Registration_Amount</th>
         <th>Amount_Funded</th>
         <th>TA</th>
+        <th>Document</th>
     </tr>
 
 
@@ -79,13 +80,13 @@ if($conn -> connect_error) {
 	die("Connection failed:" . $conn -> connect_error);
 }
 
-$sql = "SELECT sr,sdrn,Name_of_Faculty,Criteria,Name_of_Workshop,Sponsorship,Venue,Start_Date,End_Date,No_of_days,Organizer,level,Source_of_Funding,Registration_Amount,Amount_Funded,TA FROM workshops";
+$sql = "SELECT sr,sdrn,Name_of_Faculty,Criteria,Name_of_Workshop,Sponsorship,Venue,Start_Date,End_Date,No_of_days,Organizer,level,Source_of_Funding,Registration_Amount,Amount_Funded,TA,uploads FROM workshops";
 $result = $conn-> query($sql);
 
 if($result -> num_rows > 0){
 	while($row = $result -> fetch_assoc()) {
 		
-        
+      //  $doc = $row['uploads'];
         echo "<tr>
         <td>".$row["sr"]."</td>
         <td>".$row["sdrn"]."</td>
@@ -103,7 +104,7 @@ if($result -> num_rows > 0){
         <td>".$row['Registration_Amount']."</td>
         <td>".$row['Amount_Funded']."</td>
         <td>".$row['TA']."</td></tr>";
-        
+        echo "<td><a href='".$doc."'>$doc </td></a>";
         
 }
 echo "</table>";

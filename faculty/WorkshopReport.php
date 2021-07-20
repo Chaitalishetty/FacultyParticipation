@@ -89,7 +89,7 @@
 			 <th>Registration Amount</th>
 			 <th>Amount Funded</th>
 			 <th>TA</th>
-			
+			 <th>Doc</th>
 
         </tr>
     
@@ -112,6 +112,7 @@ $sdrn=$user_check;
                 
                 while($row = mysqli_fetch_array($query_run))
                 {
+                    $doc = $row['uploads'];
                     echo "<tr>"; 
                             
                             echo "<td>" . $row['SDRN'] . "</td>"; 
@@ -129,7 +130,7 @@ $sdrn=$user_check;
 							echo "<td>" . $row['ramount'] . "</td>";
 							echo "<td>" . $row['amount_funded'] . "</td>";
 							echo "<td>" . $row['TA'] . "</td>";
-						
+                            echo "<td><a href='".$doc."'>$doc </td></a>";
                     echo "</tr>";
                 }
             //}

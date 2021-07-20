@@ -105,12 +105,6 @@ $sdrn=$user_check;
                 while($row = mysqli_fetch_array($query_run))
                 {
                     $doc = $row['uploads'];
-                    $docc = $doc;
-                  //   $docc = $doc .".pdf";
-                  // $docc = '.\uploads\401.pdf';
-
-                  // str_replace("/","\", docc);
-
                     echo "<tr>"; 
                             
                             echo "<td>" . $row['SDRN'] . "</td>"; 
@@ -119,9 +113,8 @@ $sdrn=$user_check;
                             echo "<td>" . $row['Subject'] . "</td>";
                             echo "<td>" . $row['Semester'] . "</td>";
                             echo "<td>" . $row['Venue'] . "</td>";
-                            echo "<td>" . $row['Date'] . "</td>";
-                    
-                            echo "<td><a href='".$docc."'>$docc </td></a>";
+                            echo "<td>" . $row['Date'] . "</td>";  
+                            echo "<td><a href='".$doc."'>$doc </td></a>";
                             // echo "<td> <a href='view_doc.php' target='_blank'> Doc </a></td>";
                        
                     echo "</tr>";
