@@ -22,6 +22,7 @@ $finalvenue= ($ven =='Other') ?  $newven : $ven;
  
 
 $targetfolder = "uploads/";
+// changes
 
  $targetfolder = $targetfolder . basename( $_FILES['file']['name']) ;
 

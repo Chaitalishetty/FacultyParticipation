@@ -56,7 +56,8 @@
         <th>Subject</th>
         <th>Semester</th>
         <th>Venue</th>
-        <th>Date</th>    
+        <th>Date</th>   
+        <th>Document</th>  
     </tr>
     
     <?php
@@ -70,8 +71,10 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
+                    $doc = '../faculty/'. $row['uploads'];
                     echo "<tr><td>" . $row["sr"]. "</td><td>" . $row["sdrn"]. "</td><td>"
                     . $row["NameOfFaculty"]. "</td><td>" . $row["University"]. "</td><td>" . $row["Subject"]. "</td><td>" . $row["Semester"]. "</td><td>" . $row["Venue"]. "</td><td>" . $row["Date"]. "</td></tr>";
+                    echo "<td><a href='".$doc."'>$doc </td></a>";
                 }
                 echo "</table>";
             } 

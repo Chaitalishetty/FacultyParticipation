@@ -61,6 +61,7 @@
 	<th>Semester</th>
 	<th>Venue</th>
 	<th>Date</th>
+    <th>Document</th> 
 </tr>
 
 <?php
@@ -69,11 +70,13 @@ if($conn -> connect_error) {
 	die("Connection failed:" . $conn -> connect_error);
 }
 
-$sql = "SELECT SDRN,Name,Subject,Semester,Venue,Date FROM orientation";
+$sql = "SELECT SDRN,Name,Subject,Semester,Venue,Date ,uploads FROM orientation";
 $result = $conn-> query($sql);
 
 if($result -> num_rows > 0){
 	while($row = $result -> fetch_assoc()) {
+        $doc = '../faculty/'. $row['uploads'];
+        
 		echo "<tr>
             <td>" . "1"."</td>
             <td>".$row['SDRN']."</td>
@@ -82,6 +85,7 @@ if($result -> num_rows > 0){
             <td>".$row["Semester"]."</td>
             <td>".$row["Venue"]."</td>
             <td>".$row["Date"]."</td>
+         <td><a href='".$doc."'>Doc</a></td>
         </tr>";
 }
 echo "</table>";

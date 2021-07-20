@@ -82,6 +82,7 @@
             <th>Semester</th>
             <th>Venue</th>
             <th>Date</th>    
+            <th>Doc</th>
         </tr>
     
         <?php
@@ -103,6 +104,7 @@ $sdrn=$user_check;
                 
                 while($row = mysqli_fetch_array($query_run))
                 {
+                    $doc = $row['uploads'];
                     echo "<tr>"; 
                             
                             echo "<td>" . $row['SDRN'] . "</td>"; 
@@ -112,6 +114,7 @@ $sdrn=$user_check;
                             echo "<td>" . $row['Semester'] . "</td>";
                             echo "<td>" . $row['Venue'] . "</td>";
                             echo "<td>" . $row['Date'] . "</td>";
+                            echo "<td><a href='".$doc."'>Doc</td></a>";
                     echo "</tr>";
                 }
             //}
