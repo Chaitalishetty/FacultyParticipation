@@ -31,7 +31,7 @@
      </div></h1>
      <div class="formGroup"> 
       <label class="Sdrn">SDRN:<span class="required">*</span></label>
-      <input type="text" disabled class="form-control" required name="SDRN" placeholder="enter the number" value="<?php echo $user_check;?>">
+      <input type="text" readonly class="form-control" required name="SDRN" placeholder="enter the number" value="<?php echo $user_check;?>">
     </div>
     <div class="formGroup"> 
       <label class="Name">Name of faculty:<span class="required">*</span></label>
@@ -132,7 +132,7 @@
     </div>
     <div class="formGroup"> 
       <label class="days">No.of days:<span class="required">*</span></label>
-      <input disabled id="noOfDays" class="form-control" type="number"  name="Days"  placeholder="enter the no.of days" >
+      <input readonly id="noOfDays" class="form-control" type="number"  name="Days"  placeholder="enter the no.of days" >
     </div>
   <script type="text/javascript">
 
