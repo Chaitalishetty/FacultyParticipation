@@ -38,7 +38,7 @@ mysqli_close($link);
   <body>
     <div>
     <div>
-    <form class="form-group" action="workshop_new.php" method="POST" enctype="multipart/form-data">
+    <form class="form-group" action="UpdateWorkshop2.php?id2=<?php echo $ids; ?>" method="POST" enctype="multipart/form-data">
     
     <h1><div class="login100-form-title">
         Workshop
@@ -53,7 +53,7 @@ mysqli_close($link);
     </div>
 	  <div class="formGroup">               
                   <label for="Criteria">Criteria<span class="required"> *</span></label>
-                  <input list="Criteria" class="form-control" id="select-criteria" name="criteria" value="<?php echo $row['criteria'];?>" required/>
+                  <input list="Criteria" class="form-control" id="select-criteria" name="criteria" value="<?php echo $row['criteria'];?>"/>
                       <datalist id="Criteria">
                           <option value="Workshop">
                           <option value="STTP">  
@@ -239,7 +239,7 @@ if(noday.value<=0)
       }
   
   </script>
- <input  class="form-control" type="file" name="file" size="50" required /><br>
+ <input  class="form-control" type="file" name="file" size="50"><br>
 <input type="submit" class="btn btn-danger" name="Next" action="">  
  <input type="reset" class="btn btn-danger" value="Clear">
  <a href="welcome.php" class="btn btn-danger">Go back to homepage</a>
