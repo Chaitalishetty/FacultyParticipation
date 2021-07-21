@@ -31,11 +31,7 @@
      </div></h1>
      <div class="formGroup"> 
       <label class="Sdrn">SDRN:<span class="required">*</span></label>
-<<<<<<< HEAD
-      <input type="text"  class="form-control" required name="SDRN" placeholder="enter the number" value="<?php echo $user_check;?>" readonly >
-=======
       <input type="text" readonly class="form-control" required name="SDRN" placeholder="enter the number" value="<?php echo $user_check;?>">
->>>>>>> 72924509564d08e29ec13cc27e3dfff9bda8ea58
     </div>
     <div class="formGroup"> 
       <label class="Name">Name of faculty:<span class="required">*</span></label>
@@ -136,11 +132,7 @@
     </div>
     <div class="formGroup"> 
       <label class="days">No.of days:<span class="required">*</span></label>
-<<<<<<< HEAD
-      <input  id="noOfDays" class="form-control" type="number"  name="Days"  placeholder="enter the no.of days" >
-=======
       <input readonly id="noOfDays" class="form-control" type="number"  name="Days"  placeholder="enter the no.of days" >
->>>>>>> 72924509564d08e29ec13cc27e3dfff9bda8ea58
     </div>
   <script type="text/javascript">
 
