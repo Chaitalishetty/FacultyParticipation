@@ -21,6 +21,4 @@ header("Content-Disposition: attachment; filename=User_Detail.xls");
 header("Pragma: no-cache");  
 header("Expires: 0");  
 
-  echo ucwords($columnHeader) . "\n" . $setData . "\n";  
- ?> 
- 
+  echo ucwords($columnHeader) . "\n" . $setData . "\n";
