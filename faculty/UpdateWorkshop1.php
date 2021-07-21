@@ -44,12 +44,12 @@ mysqli_close($link);
         Workshop
      </div></h1>
      <div class="formGroup"> 
-      <label class="Sdrn">SDRN:<span class="required">*</span></label>
+      <label class="Sdrn">SDRN:<span class="required" readonly>*</span></label>
       <input type="text" class="form-control" required name="SDRN" placeholder="enter the number" value="<?php echo $user_check;?>">
     </div>
     <div class="formGroup"> 
-      <label class="Name">Name of faculty:<span class="required">*</span></label>
-      <input type="text" class="form-control" required name="Name of faculty" placeholder="enter the name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>">
+      <label class="Name">Name of faculty:<span class="required" >*</span></label>
+      <input type="text" readonly class="form-control" required name="Name of faculty" placeholder="enter the name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>">
     </div>
 	  <div class="formGroup">               
                   <label for="Criteria">Criteria<span class="required"> *</span></label>
@@ -224,7 +224,7 @@ if(noday.value<=0)
      <option value="YES">YES</option>
    </select>
   <div id="Amt">
-    <input type="number" id="ta_amt" class="form-control" required name="TA1" value="<?php echo $row['TA'];?>" placeholder="enter the amount">
+    <input type="number" id="ta_amt" class="form-control"  name="TA1" value="<?php echo $row['TA'];?>" placeholder="enter the amount">
   </div>
 </div>
 <script type="text/javascript">
