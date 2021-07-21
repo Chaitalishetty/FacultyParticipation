@@ -48,7 +48,7 @@ mysqli_close($link);
         University Orientation
        </div></h1>  
        <div class="formGroup">
-        <label class="SDRN">SDRN:<span class="required">*</span>  </label>
+        <label class="SDRN">SDRN:<span class="required" >*</span>  </label>
         <input type="text" class="form-control" required name="SDRN" placeholder="SDRN" value="<?php echo $user_check;?>" readonly>
         </div>
         <div class="formGroup">

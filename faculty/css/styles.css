@@ -151,3 +151,26 @@ h2{
     }
     
 }
+
+.alert {
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+padding: 12px 16px;
+border-radius: 4px;
+border-style: solid;
+border-width: 1px;
+text-align: center;
+margin-top: 40px;
+font-size: 25px;
+}
+
+.alert-success{
+    background-color: rgba(227, 253, 235, 1);
+    border-color: rgba(38, 179, 3, 1);
+    color: rgba(60, 118, 61, 1);
+}
+.alert-error {
+    background-color: rgba(248, 215, 218, 1);
+    border-color: rgba(220, 53, 69, 1);
+    color: rgba(114, 28, 36,1);

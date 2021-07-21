@@ -35,7 +35,7 @@
     </div>
     <div class="formGroup"> 
       <label class="Name">Name of faculty:<span class="required">*</span></label>
-      <input type="text" class="form-control" required name="Name of faculty" placeholder="enter the name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>">
+      <input type="text" class="form-control" required name="Name of faculty" placeholder="enter the name" value="<?php echo $login_session; echo" " ;echo $login_sess;?>" readonly >
     </div>
 	  <div class="formGroup">               
                   <label for="Criteria">Criteria :<span class="required"> *</span></label>
@@ -206,7 +206,7 @@ if(noday.value<= 0)
      <option value="YES">YES</option>
    </select>
   <div id="Amt" style="display:none;">
-    <input type="number"  class="form-control" required name="TA1" placeholder="enter the amount">
+    <input type="number"  class="form-control"  name="TA1" placeholder="enter the amount">
   </div>
 </div>
   <script type="text/javascript">

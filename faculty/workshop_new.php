@@ -1,3 +1,6 @@
+<style>
+<?php include 'css/styles.css'; ?>
+</style>
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
@@ -41,10 +44,10 @@ $finalvenue= ($src =='Other') ?  $newven : $ven;
  if ($file_type=="application/pdf") {
   if(move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder))
   {
-    echo "The file ".  $newfilename. " is uploaded<br>";
+    echo ("<div class='alert alert-success'>The file ".  $newfilename. " is uploaded </div><br>");
   }
   else { 
-  echo "Problem uploading file"; 
+    echo "<div class='alert alert-error'>Problem uploading file </div>";
   } 
  }
  else { 
@@ -55,8 +58,14 @@ $finalvenue= ($src =='Other') ?  $newven : $ven;
 //$sql = "INSERT INTO workshop (SDRN, Name_of_faculty, criteria,Name_of_Seminar, Sponsorship, Venue, Datr_To ,Date_From, Days, Organiser, level, Source_of_Funding, Registration_Amount, Amount_funded, TA) VALUES ('$sdrn','$name','$cri','$sem', '$spon', '$ven', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta')";
 $sql = "INSERT INTO workshop (SDRN, Name, criteria,Name_workshop, sponsor, venue, sdate, edate, ndays, organiser, org_type, sfunding, ramount, amount_funded ,TA ,uploads) VALUES ('$sdrn','$name','$cri','$sem','$spon','$finalvenue', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta','$targetfolder')";
 if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-    echo "<a href='welcome.php'>Go back to homepage<br><a>";
+    echo ("<div class='alert alert-success'>
+
+    Records added successfully. <br>
+ <a href='welcome.php'>Go back to homepage<br><a> </div>");
+
+ echo("<script>
+ setTimeout(function(){ window.location='welcome.php' }, 5000);
+ </script>");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 } 

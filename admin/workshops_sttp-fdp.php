@@ -86,7 +86,7 @@ $result = $conn-> query($sql);
 if($result -> num_rows > 0){
 	while($row = $result -> fetch_assoc()) {
 		
-      //  $doc = $row['uploads'];
+        $doc = '../faculty/'. $row['uploads'];
         echo "<tr>
         <td>".$row["sr"]."</td>
         <td>".$row["sdrn"]."</td>
@@ -104,7 +104,7 @@ if($result -> num_rows > 0){
         <td>".$row['Registration_Amount']."</td>
         <td>".$row['Amount_Funded']."</td>
         <td>".$row['TA']."</td></tr>";
-        echo "<td><a href='".$doc."'>$doc </td></a>";
+        echo "<td><a href='".$doc."'>Doc </td></a>";
         
 }
 echo "</table>";
