@@ -125,7 +125,7 @@
                         echo "<td>" . $row['Semester'] . "</td>";
                         echo "<td>" . $row['Venue'] . "</td>";
                         echo "<td>" . $row['Date'] . "</td>";
-                        echo "<td><a href='" . $doc . "'>$doc </td></a>";
+                        echo "<td><a href='" . $doc . "'>Doc </td></a>";
                         // echo "<td> <a href='view_doc.php' target='_blank'> Doc </a></td>";
 
                         echo "</tr>";

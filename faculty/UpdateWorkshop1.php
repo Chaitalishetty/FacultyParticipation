@@ -181,8 +181,7 @@ if(noday.value<=0)
 </div>
 <div class="formGroup"> 
   <label class="Funding">Source of Funding:<span class="required">*</span></label>
-   <select id="Source"  class="form-control" name="Source of Funding" onchange="funding(this);" value ="<?php echo $row['sfunding'];?>">
-     <option></option>
+   <select id="Source"  class="form-control" name="Source of Funding" value="<?php echo $row['sfunding'];?>" onchange="funding(this);" value ="<?php echo $row['sfunding'];?>">
      <option value="Self">Self</option>
      <option value="Other">Other
      </option>

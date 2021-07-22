@@ -37,34 +37,63 @@ $filename = $_FILES["file"]["name"];
 // changes
 $temp = explode(".", $filename);
 $file_ext = substr($filename, strripos($filename, '.'));
-$newfilename = $sdrn . '_' . $name . '_' . $cri . '_' . $sem . $file_ext;
+$newfilename = $sdrn . '_' . $name . '_' . $cri . '_' . $sem . '_' . $org . '_' . $datefrom . $file_ext;
 $ok = 1;
 $targetfolder = "uploads/" . $newfilename;
 $file_type = $_FILES['file']['type'];
-if ($file_type == "application/pdf") {
-    if (move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder)) {
-        echo ("<div class='alert alert-success'>The file " .  $newfilename . " is uploaded </div><br>");
-    } else {
-        echo "<div class='alert alert-error'>Problem uploading file </div>";
+
+
+// checking duplicate entry 
+$query = "SELECT uploads FROM orientation WHERE SDRN = '$sdrn' ";
+
+$count = @mysqli_query($link, $query);
+$flag = 0;
+
+while ($row = @mysqli_fetch_array($count)) {
+    // CHECK FOR DUPLICATES
+    if ($targetfolder == $row['uploads']) {
+        $flag = 1;
+        echo "<div class='alert alert-error'>Duplicate Entry Found ...Please check again and update.</div>";
+        echo ("<script>
+        setTimeout(function(){ window.location='UpDelOrientation.php' }, 6000);
+        </script>");
+        break;
     }
-} else {
-    echo "You may only upload PDFs, JPEGs or GIF files.<br>";
 }
 
-// Attempt insert query execution
-//$sql = "INSERT INTO workshop (SDRN, Name_of_faculty, criteria,Name_of_Seminar, Sponsorship, Venue, Datr_To ,Date_From, Days, Organiser, level, Source_of_Funding, Registration_Amount, Amount_funded, TA) VALUES ('$sdrn','$name','$cri','$sem', '$spon', '$ven', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta')";
-$sql = "INSERT INTO workshop (SDRN, Name, criteria,Name_workshop, sponsor, venue, sdate, edate, ndays, organiser, org_type, sfunding, ramount, amount_funded ,TA ,uploads) VALUES ('$sdrn','$name','$cri','$sem','$spon','$finalvenue', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta','$targetfolder')";
-if (mysqli_query($link, $sql)) {
-    echo ("<div class='alert alert-success'>
+if ($flag == 0) {
+    //upload doc
+    if ($file_type == "application/pdf") {
+        if (move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder)) {
+            echo ("<div class='alert alert-success'>The file " .  $newfilename . " is uploaded </div><br>");
+        } else {
+            echo "<div class='alert alert-error'>Problem uploading file </div>";
+        }
+    } else {
+        echo "You may only upload PDFs only<br>";
+    }
+
+
+    // Attempt insert query execution
+    //$sql = "INSERT INTO workshop (SDRN, Name_of_faculty, criteria,Name_of_Seminar, Sponsorship, Venue, Datr_To ,Date_From, Days, Organiser, level, Source_of_Funding, Registration_Amount, Amount_funded, TA) VALUES ('$sdrn','$name','$cri','$sem', '$spon', '$ven', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta')";
+    $sql = "INSERT INTO workshop (SDRN, Name, criteria,Name_workshop, sponsor, venue, sdate, edate, ndays, organiser, org_type, sfunding, ramount, amount_funded ,TA ,uploads) VALUES ('$sdrn','$name','$cri','$sem','$spon','$finalvenue', '$dateto','$datefrom','$num', '$org' ,'$choose' ,'$finalsrc','$reg', '$fund','$finalta','$targetfolder')";
+    if (mysqli_query($link, $sql)) {
+        echo ("<div class='alert alert-success'>
 
     Records added successfully. <br>
  <a href='welcome.php'>Go back to homepage<br><a> </div>");
 
-    echo ("<script>
+        echo ("<script>
  setTimeout(function(){ window.location='welcome.php' }, 5000);
  </script>");
-} else {
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
-// Close connection
+    } else {
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+    // Close connection
+
+};
+
+
+
+
 mysqli_close($link);

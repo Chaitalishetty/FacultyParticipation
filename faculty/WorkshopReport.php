@@ -141,7 +141,7 @@
                         echo "<td>" . $row['ramount'] . "</td>";
                         echo "<td>" . $row['amount_funded'] . "</td>";
                         echo "<td>" . $row['TA'] . "</td>";
-                        echo "<td><a href='" . $doc . "'>$doc </td></a>";
+                        echo "<td><a href='" . $doc . "'>Doc</td></a>";
                         echo "</tr>";
                     }
                     //}

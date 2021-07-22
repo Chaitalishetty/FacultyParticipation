@@ -23,33 +23,68 @@ $filename = $_FILES["file"]["name"];
 // changes
 $temp = explode(".", $filename);
 $file_ext = substr($filename, strripos($filename, '.'));
-$newfilename = $sdrn . '_' . $name . '_' . $sub . '_' . $date . $file_ext;
+$newfilename = $sdrn . '_' . $name . '_' . $sub . '_syllabus_' . $date . $file_ext;
 $ok = 1;
 $targetfolder = "uploads/" . $newfilename;
 $file_type = $_FILES['file']['type'];
-if ($file_type == "application/pdf") {
-    if (move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder)) {
-        echo ("<div class='alert alert-success'>The file " .  $newfilename . " is uploaded </div><br>");
-    } else {
-        echo "<div class='alert alert-error'>Problem uploading file </div>";
+
+
+
+// checking duplicate entry 
+$query = "SELECT uploads FROM syllabus WHERE SDRN = '$sdrn' ";
+
+$count = @mysqli_query($link, $query);
+$flag = 0;
+
+while ($row = @mysqli_fetch_array($count)) {
+    // CHECK FOR DUPLICATES
+
+    if ($targetfolder == $row['uploads']) {
+        $flag = 1;
+        echo "<div class='alert alert-error'>Duplicate Entry Found ...Please check again and update.</div>";
+        echo ("<script>
+        setTimeout(function(){ window.location='UpDelSyllabus.php' }, 6000);
+        </script>");
+        break;
     }
-} else {
-    echo "You may only upload PDFs, JPEGs or GIF files.<br>";
 }
-// Attempt insert query execution
-$sql = "INSERT INTO syllabus (SDRN, Name, University, Subject,Semester, Venue, Date ,uploads) VALUES ('$sdrn', '$name', '$uni','$sub', '$sem', '$finalvenue', '$date' ,'$targetfolder')";
-if (mysqli_query($link, $sql)) {
-    echo ("<div class='alert alert-success'>
+
+
+if ($flag == 0) {
+    if ($file_type == "application/pdf") {
+        if (move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder)) {
+            echo ("<div class='alert alert-success'>The file " .  $newfilename . " is uploaded </div><br>");
+        } else {
+            echo "<div class='alert alert-error'>Problem uploading file </div>";
+        }
+    } else {
+        echo "<div class='alert alert-error'>You may only upload PDF files. Please update it.</div><br>";
+    }
+
+    // Attempt insert query execution
+    $sql = "INSERT INTO syllabus (SDRN, Name, University, Subject,Semester, Venue, Date ,uploads) VALUES ('$sdrn', '$name', '$uni','$sub', '$sem', '$finalvenue', '$date' ,'$targetfolder')";
+    if (mysqli_query($link, $sql)) {
+        echo ("<div class='alert alert-success'>
 
     Records added successfully. <br>
  <a href='welcome.php'>Go back to homepage<br><a> </div>");
 
-    echo ("<script>
+        echo ("<script>
  setTimeout(function(){ window.location='welcome.php' }, 5000);
  </script>");
-} else {
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
+    } else {
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+};
+
+
+
+
+
+
+
+
+
 // Close connection
 mysqli_close($link);
 ?>

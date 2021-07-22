@@ -94,6 +94,7 @@ mysqli_close($link);
           <input type="date" class="form-control" name="Date" id="date" value="<?php echo $row['Date']; ?>">
         </div>
         <input type="file" name="file" size="50" class="form-control" required /></br>
+       
         <input type="submit" class="btn btn-danger" name="Next" action="">
         <input type="reset" class="btn btn-danger" value="Clear">
         <a href="welcome.php" class="btn btn-danger">Go back to homepage</a>
@@ -101,48 +102,48 @@ mysqli_close($link);
     </div>
   </div>
   <datalist id="all-collage">
-    <!-- copy pasted from result.txt file for searchable dropdown of venue -->
-    <option value="Other">
+  <option value="Other">
     <option value="Bharati Vidyapeeth College of Engineering, Belapur, Navi Mumbai">
-    <option value="Datta Meghe College of Engineering,�Airoli, Navi Mumbai">
-    <option value="Don Bosco Institute of Technology,�Kurla�(West)">
-    <option value="Dwarkadas J. Sanghvi College of Engineering,�Vile Parle�West">
-    <option value="Fr. Conceicao Rodrigues College of Engineering,�Bandra">
-    <option value="Fr. Conceicao Rodrigues Institute of Technology,�Vashi">
-    <option value="Institute of Chemical Technology,�Matunga(Autonomous)">
-    <option value="Indian Institute of Technology Bombay,�Powai">
-    <option value="KC College of Engineering,�Thane�East">
-    <option value="K.J. Somaiya College of Engineering,�Vidyavihar">
-    <option value="K.J. Somaiya Institute of Engineering and Information Technology,�Sion">
-    <option value="Konkan Gyanpeeth College of Engineering,�Karjat">
-    <option value="Lokmanya Tilak College of Engineering,�Kopar Khairane, Navi Mumbai">
-    <option value="M. H. Saboo Siddik College of Engineering�-�Byculla">
-    <option value="Mahatma Gandhi Mission's College of Engineering and Technology,�Kamothe">
-    <option value="NMIMS�Narsee Monjee Institute of Management Studies,�Juhu">
-    <option value="Padmabhushan Vasantdada Patil Pratishthan's College of Engineering,�Sion">
-    <option value="Pillai College of Engineering,�Panvel">
+    <option value="Datta Meghe College of Engineering, Airoli, Navi Mumbai">
+    <option value="Don Bosco Institute of Technology, Kurla (West)">
+    <option value="Dwarkadas J. Sanghvi College of Engineering, Vile Parle West">
+    <option value="Fr. Conceicao Rodrigues College of Engineering, Bandra">
+    <option value="Fr. Conceicao Rodrigues Institute of Technology, Vashi">
+    <option value="Institute of Chemical Technology, Matunga(Autonomous)">
+    <option value="Indian Institute of Technology Bombay, Powai">
+    <option value="KC College of Engineering, Thane East">
+    <option value="K.J. Somaiya College of Engineering, Vidyavihar">
+    <option value="K.J. Somaiya Institute of Engineering and Information Technology, Sion">
+    <option value="Konkan Gyanpeeth College of Engineering, Karjat">
+    <option value="Lokmanya Tilak College of Engineering, Kopar Khairane, Navi Mumbai">
+    <option value="M. H. Saboo Siddik College of Engineering - Byculla">
+    <option value="Mahatma Gandhi Mission's College of Engineering and Technology, Kamothe">
+    <option value="NMIMS Narsee Monjee Institute of Management Studies, Juhu">
+    <option value="Padmabhushan Vasantdada Patil Pratishthan's College of Engineering, Sion">
+    <option value="Pillai College of Engineering, Panvel">
     <option value="Rajiv Gandhi Institute of Technology, Mumbai">
-    <option value="Ramrao Adik Institute of Technology,�Nerul">
-    <option value="Rizvi College of Engineering,�Bandra�(West)">
-    <option value="Rustomjee Academy for Global Careers,�Thane">
-    <option value="Sardar Patel College of Engineering�-�Andheri(West)">
-    <option value="Sardar Patel Institute of Technology�-�Andheri(West)">
-    <option value="Shah and Anchor Kutchhi Engineering College,�Chembur">
-    <option value="Shivajirao S. Jondhale College of Engineering,�Dombivali">
-    <option value="Sindhudurg Shikshan Prasarak Mandal's College of Engineering,�Kankavli">
-    <option value="SIES Graduate School of Technology,�Nerul">
-    <option value="St. Francis Institute of Technology,�Borivali">
-    <option value="Terna Engineering College,�Nerul,�Navi Mumbai">
-    <option value="Thakur College of Engineering and Technology,�Thakur Village,�Kandivali">
-    <option value="Thadomal Shahani Engineering College�Mumbai,�Bandra�(W)">
-    <option value="Vidyalankar Institute of Technology,�Wadala(E),Mumbai">
-    <option value="Vidyavardhini College of Engineering and Technology,�Vasai Road(W)">
-    <option value="Usha Mittal Institute of Technology,�Santacruz(W),�Mumbai">
-    <option value="Veermata Jijabai Technological Institute,�Matunga,�Mumbai">
-    <option value="Vivekanand Education Society's Institute of Technology�Mumbai, Chembur(E)">
-    <option value="Watumull Institute of Electronics Engineering and Computer Technology,�Ulhasnagar">
-    <option value="Xavier Institute of Engineering�Mahim�(West)">
-    <option value="Yadavrao Tasgaonkar Institute of Engineering & Technology�(YTIET),�Bhivpuri">
+    <option value="Ramrao Adik Institute of Technology, Nerul">
+    <option value="Rizvi College of Engineering, Bandra (West)">
+    <option value="Rustomjee Academy for Global Careers, Thane">
+    <option value="Sardar Patel College of Engineering - Andheri(West)">
+    <option value="Sardar Patel Institute of Technology - Andheri(West)">
+    <option value="Shah and Anchor Kutchhi Engineering College, Chembur">
+    <option value="Shivajirao S. Jondhale College of Engineering, Dombivali">
+    <option value="Sindhudurg Shikshan Prasarak Mandal's College of Engineering, Kankavli">
+    <option value="SIES Graduate School of Technology, Nerul">
+    <option value="St. Francis Institute of Technology, Borivali">
+    <option value="Terna Engineering College, Nerul, Navi Mumbai">
+    <option value="Thakur College of Engineering and Technology, Thakur Village, Kandivali">
+    <option value="Thadomal Shahani Engineering College Mumbai, Bandra (W)">
+    <option value="Vidyalankar Institute of Technology, Wadala(E),Mumbai">
+    <option value="Vidyavardhini College of Engineering and Technology, Vasai Road(W)">
+    <option value="Usha Mittal Institute of Technology, Santacruz(W), Mumbai">
+    <option value="Veermata Jijabai Technological Institute, Matunga, Mumbai">
+    <option value="Vivekanand Education Society's Institute of Technology Mumbai, Chembur(E)">
+    <option value="Watumull Institute of Electronics Engineering and Computer Technology, Ulhasnagar">
+    <option value="Xavier Institute of Engineering Mahim (West)">
+    <option value="Yadavrao Tasgaonkar Institute of Engineering & Technology (YTIET), Bhivpuri">
+  
   </datalist>
 
   <script>
