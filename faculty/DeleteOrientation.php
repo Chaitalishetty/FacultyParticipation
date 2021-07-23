@@ -1,3 +1,7 @@
+<style>
+    <?php include 'css/styles.css'; ?>
+</style>
+
 <?php
 
 // Escape user inputs for security
@@ -12,9 +16,10 @@ $id3=$_GET['id'];
  
 $sql = "DELETE FROM orientation WHERE Srno=$id3";
 if (mysqli_query($link, $sql)) {
-    echo "Record deleted successfully";
+    echo "<div class='alert alert-success'>Record deleted successfully</div>";
+    echo "<script> setTimeout(function(){  window.location.href='UpDelOrientation.php' }, 3000);</script>";
 } else {
-    echo "Error deleting record: " . mysqli_error($link);
+    echo "<div class='alert alert-error'>Error deleting record: </div>" . mysqli_error($link);
 }
 // Close connection
 mysqli_close($link);

@@ -57,7 +57,7 @@ else {
 
 $sql ="UPDATE syllabus SET SDRN=$sdrn, Name='$name', University='$uni', Subject='$sub', Semester='$sem', Venue='$finalvenue', Date='$date' WHERE Srno=$id3";
 if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
+    echo "Records updated successfully.";
 
 
     echo "<a href='welcome.php'>Go back to homepage<br><a>";
@@ -67,7 +67,3 @@ if(mysqli_query($link, $sql)){
  
 // Close connection
 mysqli_close($link);
-
-
-
-?>
