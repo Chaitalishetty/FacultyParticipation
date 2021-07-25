@@ -3,26 +3,19 @@
 <head>
 	<title>All Records Workshops</title>
 <style>
-    
-    table {
+ table {
         border-collapse: collapse;
         width: 100%;
-        color: #588c7e;
-        font-family: monospace;
+        color: #737373;
         font-size: 25px;
-        text-align: left;
+        text-align: center;
     }
-    
     th {
-        background-color: #c9243f;
+        padding: 10px;
+        background-color: #C10223;
         color: white;
     }
-    
-    tr:nth-child(even) {background-color: #f2f2f2}
-    button{
-        align-items: center;
-        background-color: lightyellow;
-    }
+    tr:nth-child(even) {background-color: #f2f2f2}    
     h2{
         text-align: center;
         font-family: inherit;
@@ -34,9 +27,12 @@
     padding: .67em .67em;
     cursor: pointer;
     }
+    .btn:hover{
+        opacity:0.9;
+    }
     .btn-primary {
     color: white;
-    background-color: #56CCF2;
+    background-color:#606060;
     border: none;
     border-radius: .3em;
     font-weight: bold;
@@ -46,27 +42,27 @@
 </head>
 
 <body>
-<h2>***  Data of Workshops table  ***</h2>
-
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
+<h2>Data of Workshops table</h2>
 <br>
 
 <table border="3px">
     <tr>
         <th>sr</th>
         <th>sdrn</th>
-        <th>Name_of_Faculty</th>
+        <th>NameOfFaculty</th>
         <th>Criteria</th>
-        <th>Name_of_Workshop</th>
+        <th>NameOfWorkshop</th>
         <th>Sponsorship</th>
         <th>Venue</th>
-        <th>Start_Date</th>
-        <th>End_Date</th>
-        <th>No_of_days</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>NoOfDays</th>
         <th>Organizer</th>
         <th>level</th>
-        <th>Source_of_Funding</th>
-        <th>Registration_Amount</th>
-        <th>Amount_Funded</th>
+        <th>SourceOfFunding</th>
+        <th>RegistrationAmount</th>
+        <th>AmountFunded</th>
         <th>TA</th>
         <th>Document</th>
     </tr>
@@ -79,32 +75,30 @@ $conn = mysqli_connect("localhost","root","","faculty_par");
 if($conn -> connect_error) {
 	die("Connection failed:" . $conn -> connect_error);
 }
-
-$sql = "SELECT sr,sdrn,Name_of_Faculty,Criteria,Name_of_Workshop,Sponsorship,Venue,Start_Date,End_Date,No_of_days,Organizer,level,Source_of_Funding,Registration_Amount,Amount_Funded,TA,uploads FROM workshops";
+$sql = "SELECT * FROM workshop";
 $result = $conn-> query($sql);
-
 if($result -> num_rows > 0){
 	while($row = $result -> fetch_assoc()) {
 		
         $doc = '../faculty/'. $row['uploads'];
         echo "<tr>
-        <td>".$row["sr"]."</td>
-        <td>".$row["sdrn"]."</td>
-        <td>".$row["Name_of_Faculty"]."</td>
-        <td>".$row["Criteria"]."</td>
-        <td>".$row["Name_of_Workshop"]."</td>
-        <td>".$row["Sponsorship"]."</td>
-        <td>".$row["Venue"]."</td>
-        <td>".$row["Start_Date"]."</td>
-        <td>".$row['End_Date']."</td>
-        <td>".$row['No_of_days']."</td>
-        <td>".$row['Organizer']."</td>
-        <td>".$row['level']."</td>
-        <td>".$row['Source_of_Funding']."</td>
-        <td>".$row['Registration_Amount']."</td>
-        <td>".$row['Amount_Funded']."</td>
-        <td>".$row['TA']."</td></tr>";
-        echo "<td><a href='".$doc."'>Doc </td></a>";
+        <td>".$row["Srno"]."</td>
+        <td>".$row["SDRN"]."</td>
+        <td>".$row["Name"]."</td>
+        <td>".$row["criteria"]."</td>
+        <td>".$row["Name_workshop"]."</td>
+        <td>".$row["sponsor"]."</td>
+        <td>".$row["venue"]."</td>
+        <td>".$row["sdate"]."</td>
+        <td>".$row['edate']."</td>
+        <td>".$row['ndays']."</td>
+        <td>".$row['organiser']."</td>
+        <td>".$row['org_type']."</td>
+        <td>".$row['sfunding']."</td>
+        <td>".$row['ramount']."</td>
+        <td>".$row['amount_funded']."</td>
+        <td>".$row['TA']."</td>";
+        echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></td></a></tr>";
         
 }
 echo "</table>";

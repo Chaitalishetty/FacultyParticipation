@@ -8,19 +8,16 @@
     table {
         border-collapse: collapse;
         width: 100%;
-        color: #606060;
-        font-family: inherit;
-        font-size: 20px;
-        text-align: left;
+        color: #737373;
+        font-size: 25px;
+        text-align: center;
     }
-    
     th {
-        background-color: #c9243f;
+        padding: 10px;
+        background-color: #C10223;
         color: white;
     }
-    
-    tr:nth-child(even) {background-color: #f2f2f2}
-    
+    tr:nth-child(even) {background-color: #f2f2f2}    
     h2{
         text-align: center;
         font-family: inherit;
@@ -53,15 +50,11 @@
         padding: .37em .37em;
         
     }
-    
 </style>
-
 </head>
-
-
 <body>
-
-<h2>***  Data of Seminar table  ***</h2>
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
+<h2>Data of Syllabus table</h2>
 
 <br>
 
@@ -125,7 +118,7 @@ if(isset($_POST['search']))
 //	$query = "SELECT * FROM syllabus_settings WHERE (
 //    ((start_date Between '$txtStartDate' AND '$txtEndDate') AND (end_date Between '$txtStartDate' AND '$txtEndDate')) AND (NameOfFaculty = '$NameOfFaculty') OR ((NameOfFaculty = '$NameOfFaculty') OR ((start_date Between '$txtStartDate' AND '$txtEndDate') AND (end_date Between '$txtStartDate' AND '$txtEndDate'))) ) ORDER BY start_date";
     
-    $query = "SELECT * FROM syllabus_settings WHERE ((Date Between '$txtStartDate' AND '$txtEndDate') OR (NameOfFaculty = '$NameOfFaculty'))" ;
+    $query = "SELECT * FROM syllabus WHERE ((Date Between '$txtStartDate' AND '$txtEndDate') OR (Name= '$NameOfFaculty'))" ;
     
     
 	$count = @mysqli_query($conn,$query);
@@ -141,19 +134,19 @@ if(isset($_POST['search']))
         $doc = '../faculty/'. $row['uploads'];
         echo "<tr>"; 
         
-            echo "<td>" . $row['sr'] . "</td>"; 
-            echo "<td>" . $row['sdrn'] . "</td>"; 
-            echo "<td>" . $row['NameOfFaculty'] . "</td>";
+            echo "<td>" . $row['Srno'] . "</td>"; 
+            echo "<td>" . $row['SDRN'] . "</td>"; 
+            echo "<td>" . $row['Name'] . "</td>";
             echo "<td>" . $row['University'] . "</td>";
             echo "<td>" . $row['Subject'] . "</td>";
             echo "<td>" . $row['Semester'] . "</td>";
             echo "<td>" . $row['Venue'] . "</td>";
             echo "<td>" . $row['Date'] . "</td>";
-            echo "<td><a href='".$doc."'>Doc</a></td>";
+            echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></a></td>";
             
 
         echo "</tr>";
-    }        
+}        
 }
 
 

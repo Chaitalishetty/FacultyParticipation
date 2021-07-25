@@ -8,19 +8,16 @@
     table {
         border-collapse: collapse;
         width: 100%;
-        color: #588c7e;
-        font-family: monospace;
+        color: #737373;
         font-size: 25px;
-        text-align: left;
+        text-align: center;
     }
-    
     th {
-        background-color: #c9243f;
+        padding: 10px;
+        background-color: #C10223;
         color: white;
     }
-    
-    tr:nth-child(even) {background-color: #f2f2f2}
-    
+    tr:nth-child(even) {background-color: #f2f2f2}    
     h2{
         text-align: center;
         font-family: inherit;
@@ -52,17 +49,12 @@
         vertical-align: middle;
         padding: .37em .37em;
         
-    }
-    
+    }  
 </style>
-
 </head>
-
-
 <body>
-
-<h2>***  Data of University Orientation table  ***</h2>
-
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
+<h2>Data of Course Orientation table</h2>
 <br>
 
 <div class="container">
@@ -141,7 +133,7 @@ if(isset($_POST['search']))
             echo "<td>" . $row['Semester'] . "</td>";
             echo "<td>" . $row['Venue'] . "</td>";
             echo "<td>" . $row['Date'] . "</td>";
-            echo "<td><a href='".$doc."'>Doc </td></a>";
+            echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></td></a>";
 
 
         echo "</tr>";

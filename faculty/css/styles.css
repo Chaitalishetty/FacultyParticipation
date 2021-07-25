@@ -1,12 +1,13 @@
+:root{
+    --red:#C10223;
+}
 *,html{
    margin:0;
    padding: 0; 
    box-sizing: border-box;
    left: 0px!important;
 }
-
 body{
-    background-color:rgb(224, 230, 243) ;
     overflow-x: hidden;
 }
 h2{
@@ -14,28 +15,9 @@ h2{
     font-family: sans-serif;
 }
 .heading h2{
-    color: rgb(38, 28, 123);
+    color: gray;
     margin-bottom: 30px;
     font-weight: bold;
-}
-.container{
-
-    background-image: url("../images/homepage.jpg");
-    width: 100%!important;
-    height: 50vw;
-    background-size:100% 100%;
-    filter: opacity(70%);
-}
-
-.container:before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-size:100% 100%;
-    width: 101%;
-    height: 20vw;
-    background-image: url("../images/wave.png");
 }
 #buttons{
     padding: 15px;
@@ -43,52 +25,46 @@ h2{
 
 }
 #buttons a:hover{
-    color:rgb(38, 28, 123);
-
-
+    color:#C10223;
 }
 #buttons a{
-
-    color: rgb(38, 28, 123);
+    color: #C10223;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    font-size: 25px;    
-    
+    font-size: 25px;       
 }
 
 #gen{
 
     text-align: center;
-    padding: 5% 3% 3% 0px;
+    padding:3% 3% 0 3%;
 }
 #gen a{
     background-color:white ;
     text-decoration-line: none;
-    color: rgb(38, 28, 123);
-    font-size: 25px;
+    font-size: 2rem;
     padding: 1% 1% 1% 1%;
     border-radius: 5px;
     font-weight: bold;
-    border: 2px solid rgb(38, 28, 123);
+    color:white;
+    background-color: var(--red);
 }
 #gen a:hover{
-    color:white;
-    background-color: rgb(38, 28, 123);
-    
+   opacity: 0.9; 
 }
 .row{
 
     position: relative;
     width: 84%;
     height: 60%;
-    transform: translate(13%);
+    transform: translate(10%);
     margin-top: 10px;
  
 }
 
 .card a{
     color:white;
-    font-size: 1.3em;    
+    font-size: 3rem;    
     font-weight: bold;
     text-align: center;
     top:100px;
@@ -104,7 +80,7 @@ h2{
     height: 200px;
     margin: 16px 16px 16px 16px;
     border-radius: 5px;
-    background: linear-gradient(rgb(4, 10, 95),rgb(61, 54, 161));
+    background: linear-gradient(rgb(61, 54, 161),#A1509B);
 }
 .card:hover{
     opacity:0.9;
@@ -137,7 +113,19 @@ h2{
 .welcomeHead{
     padding: 20px;
     font-weight: bold;
-    color: rgb(38, 28, 123);
+}
+.up-btn{
+background-color: #7a7a7a;
+font-size: 20px;
+border-radius: 5px;
+color:white;
+text-decoration: none;
+padding: 10px;
+}
+.up-btn:hover{
+    text-decoration: none;
+    background-color: rgb(99, 99, 99);
+    color: white;
 }
 @media (max-width:995px) {
     .formGroup{
@@ -174,3 +162,4 @@ font-size: 25px;
     background-color: rgba(248, 215, 218, 1);
     border-color: rgba(220, 53, 69, 1);
     color: rgba(114, 28, 36,1);
+}

@@ -15,9 +15,8 @@
     <body>
         
         <!--logo-->
-        <div style="display:flex;justify-content:space-between">
-            <img src="images/logo.jpg" alt="logo" height="100px">
-            <h2 class="welcomeHead">Welcome <?php echo $login_session;?></h2>
+        <div style="display:flex;justify-content:space-between;">
+            <a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
             <div style="display:flex;justify-content:space-between">
             <?php 
                 if($user_check=='150'){
@@ -34,9 +33,10 @@
         <h2>
         <!--header-->
         
-        <div class="container">
-                
-        </div>
+        <!-- <div class="container">
+             
+        </div> -->
+        <h2 class="welcomeHead">Welcome <?php echo $login_session;?></h2>
         <div id="gen">
             <a href="reportgenerate.html">GENERATE PERSONAL REPORTS</a>
         </div>
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-sm-4">
                 <div class="card">
-                      <a href="orientation 1.php" name="University">UNIVERSITY ORIENTATION</a>   
+                      <a href="orientation 1.php" name="University">COURSE ORIENTATION</a>   
                 </div>                
                 </div>
                 <div class="col-sm-4">
@@ -61,18 +61,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                <div class="card">
-                      <a href="UpDelOrientation.php" name="University">Update University Orientation</a>   
-                </div>                
+                      <a href="UpDelOrientation.php" name="University" class="up-btn">Update Course Orientation</a>   
+                </div>                  
+                <div class="col-sm-4">
+                    <a href="UpDelSyllabus.php" name="Syllabus" class="up-btn">Update Syllabus Setting</a>
                 </div>
                 <div class="col-sm-4">
-                <div class="card">
-                    <a href="UpDelSyllabus.php" name="Syllabus">Update Syllabus Setting</a>
-                </div>
-                </div>     
-                <div class="col-sm-4">
-                <div class="card">
-                    <a href="UpDelWorkshop.php" name="Worshops">Update Workshops</a>
+                    <a href="UpDelWorkshop.php" name="Worshops" class="up-btn">Update Workshops</a>
                 </div>
             </div>
           

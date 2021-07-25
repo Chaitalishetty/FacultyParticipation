@@ -1,7 +1,7 @@
 <?php  
 $conn = mysqli_connect("localhost", "root", "", "faculty_par");  
 //mysqli_select_db($conn, 'crud');  
-$sql = "SELECT * FROM workshops";  
+$sql = "SELECT * FROM workshop";  
 $setRec = mysqli_query($conn, $sql);  
 $columnHeader = '';  
 $columnHeader = "Sr_No" . "\t" . "sdrn" . "\t" . "Name_of_Faculty" . "\t" . "Criteria_of_Workshop_STTP_Training_Program_FDP" . "\t" . "Name of Workshop / STTP / Training Program / FDP" . "\t" . "Sponsorship received for event from" . "\t" . "Venue" . "\t" . "Start_Date" . "\t" . "End_Date" . "\t" . "No. of days" . "\t" .  "Organizer" . "\t" .  "Local / State / National / International" . "\t" . "Source of Funding" . "\t" . "Registration Amount" . "\t" . "Amount Funded" . "\t" . "TA" . "\t";  

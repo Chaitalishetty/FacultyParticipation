@@ -8,19 +8,16 @@
     table {
         border-collapse: collapse;
         width: 100%;
-        color: #588c7e;
-        font-family: monospace;
-        font-size: 20px;
-        text-align: left;
+        color: #737373;
+        font-size: 25px;
+        text-align: center;
     }
-    
     th {
-        background-color: #c9243f;
+        padding: 10px;
+        background-color: #C10223;
         color: white;
     }
-    
-    tr:nth-child(even) {background-color: #f2f2f2}
-    
+    tr:nth-child(even) {background-color: #f2f2f2}    
     h2{
         text-align: center;
         font-family: inherit;
@@ -51,7 +48,6 @@
         text-align: center;
         vertical-align: middle;
         padding: .37em .37em;
-        
     }
     
 </style>
@@ -60,8 +56,8 @@
 
 
 <body>
-
-<h2>***  Data of Syllabus table  ***</h2>
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
+<h2>Data of Workshop table</h2>
 
 <br>
 
@@ -89,23 +85,23 @@
     <table border="3px">
        
         <tr>
-            <th>sr</th>
-            <th>sdrn</th>
-            <th>Name_of_Faculty</th>
-            <th>Criteria</th>
-            <th>Name_of_Workshop</th>
-            <th>Sponsorship</th>
-            <th>Venue</th>
-            <th>Start_Date</th>
-            <th>End_Date</th>
-            <th>No_of_days</th>
-            <th>Organizer</th>
-            <th>level</th>
-            <th>Source_of_Funding</th>
-            <th>Registration_Amount</th>
-            <th>Amount_Funded</th>
-            <th>TA</th>
-            <th>Document</th>  
+        <th>sr</th>
+        <th>sdrn</th>
+        <th>NameOfFaculty</th>
+        <th>Criteria</th>
+        <th>NameOfWorkshop</th>
+        <th>Sponsorship</th>
+        <th>Venue</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>NoOfDays</th>
+        <th>Organizer</th>
+        <th>level</th>
+        <th>SourceOfFunding</th>
+        <th>RegistrationAmount</th>
+        <th>AmountFunded</th>
+        <th>TA</th>
+        <th>Document</th> 
         </tr>
     
     <br>
@@ -129,8 +125,8 @@ if(isset($_POST['search']))
 	$txtEndDate = $_POST['txtEndDate'];
     
     
-	$query = "SELECT * FROM workshops WHERE (
-    ((Start_Date Between '$txtStartDate' AND '$txtEndDate') AND (End_Date Between '$txtStartDate' AND '$txtEndDate')) AND (Name_of_Faculty = '$Name_of_Faculty') OR ((Name_of_Faculty = '$Name_of_Faculty') OR ((Start_Date Between '$txtStartDate' AND '$txtEndDate') AND (End_Date Between '$txtStartDate' AND '$txtEndDate'))) ) ORDER BY Start_Date";
+	$query = "SELECT * FROM workshop WHERE (
+    ((sdate Between '$txtStartDate' AND '$txtEndDate') AND (edate Between '$txtStartDate' AND '$txtEndDate')) AND (Name = '$Name_of_Faculty') OR ((Name = '$Name_of_Faculty') OR ((sdate Between '$txtStartDate' AND '$txtEndDate') AND (edate Between '$txtStartDate' AND '$txtEndDate'))) ) ORDER BY sdate";
     
     
 	$count = @mysqli_query($conn,$query);
@@ -143,28 +139,24 @@ if(isset($_POST['search']))
 
     while($row = @mysqli_fetch_array($count)){
         $doc = '../faculty/'. $row['uploads'];
-        echo "<tr>"; 
-            
-            echo "<td>" . $row['sr'] . "</td>";
-            echo "<td>" . $row['sdrn'] . "</td>";
-            echo "<td>" . $row['Name_of_Faculty'] . "</td>"; 
-            echo "<td>" . $row['Criteria'] . "</td>"; 
-            echo "<td>" . $row['Name_of_Workshop'] . "</td>";
-            echo "<td>" . $row['Sponsorship'] . "</td>";
-            echo "<td>" . $row['Venue'] . "</td>";
-            echo "<td>" . $row['Start_Date'] . "</td>";
-            echo "<td>" . $row['End_Date'] . "</td>";
-            echo "<td>" . $row['No_of_days'] . "</td>";
-            echo "<td>" . $row['organizer'] . "</td>";
-            echo "<td>" . $row['level'] . "</td>"; 
-            echo "<td>" . $row['Source_of_Funding'] . "</td>"; 
-            echo "<td>" . $row['Registration_Amount'] . "</td>"; 
-            echo "<td>" . $row['Amount_Funded'] . "</td>"; 
-            echo "<td>" . $row['TA'] . "</td>"; 
-            echo "<td><a href='".$doc."'>$doc </td></a>";
-
-
-        echo "</tr>";
+        echo "<tr>
+        <td>".$row["Srno"]."</td>
+        <td>".$row["SDRN"]."</td>
+        <td>".$row["Name"]."</td>
+        <td>".$row["criteria"]."</td>
+        <td>".$row["Name_workshop"]."</td>
+        <td>".$row["sponsor"]."</td>
+        <td>".$row["venue"]."</td>
+        <td>".$row["sdate"]."</td>
+        <td>".$row['edate']."</td>
+        <td>".$row['ndays']."</td>
+        <td>".$row['organiser']."</td>
+        <td>".$row['org_type']."</td>
+        <td>".$row['sfunding']."</td>
+        <td>".$row['ramount']."</td>
+        <td>".$row['amount_funded']."</td>
+        <td>".$row['TA']."</td>";
+        echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></td></a></tr>";
     }       
 }
 

@@ -2,7 +2,7 @@
 
 $conn = mysqli_connect("localhost", "root", "", "faculty_par");  
 //mysqli_select_db($conn, 'crud');  
-$sql = "SELECT * FROM syllabus_settings";  
+$sql = "SELECT * FROM syllabus";  
 $setRec = mysqli_query($conn, $sql);  
 $columnHeader = '';  
 $columnHeader = "Sr_No" . "\t" . "sdrn" . "\t" . "Name_of_Faculty" . "\t" . "Name_of_University" . "\t" . "Subject" . "\t" . "Semester" . "\t" . "Venue" . "\t" . "Date" . "\t";  

@@ -3,17 +3,16 @@
 <head>
 <title>Syllabus</title>
 <style>
-    
     table {
         border-collapse: collapse;
         width: 100%;
-        color: #588c7e;
+        color: #737373;
         font-size: 25px;
-        text-align: left;
+        text-align: center;
     }
     th {
         padding: 10px;
-        background-color: #588c7e;
+        background-color: #C10223;
         color: white;
     }
     tr:nth-child(even) {background-color: #f2f2f2}
@@ -24,7 +23,7 @@
     h2{
         text-align: center;
         font-family: inherit;
-        color: slategray;
+        color: #3e3e3e;
     }
     .btn {
     text-align: center;
@@ -37,7 +36,7 @@
     }
     .btn-primary {
     color: white;
-    background-color:#429dbb;
+    background-color:#606060;
     border: none;
     border-radius: .3em;
     font-weight: bold;
@@ -60,7 +59,7 @@
 </head>
 <body>
 <nav class="navbar">
-<a href="welcome.php"><img src="images/logo.jpg" height="100px"></a>
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
 <nav>
 <h2>Data of Syllabus Setting</h2>
 
@@ -114,7 +113,7 @@ $sdrn=$user_check;
                             echo "<td>" . $row['Semester'] . "</td>";
                             echo "<td>" . $row['Venue'] . "</td>";
                             echo "<td>" . $row['Date'] . "</td>";
-                            echo "<td><a href='".$doc."'>Doc</td></a>";
+                            echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></td></a>";
                     echo "</tr>";
                 }
             //}

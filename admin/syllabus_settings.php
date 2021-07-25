@@ -3,24 +3,19 @@
 <head>
 <title>All Records Syllabus</title>
 <style>
-    
     table {
         border-collapse: collapse;
         width: 100%;
-        color: #588c7e;
-        font-family: monospace;
+        color: #737373;
         font-size: 25px;
-        text-align: left;
+        text-align: center;
     }
     th {
-        background-color: #c9243f;
+        padding: 10px;
+        background-color: #C10223;
         color: white;
     }
-    tr:nth-child(even) {background-color: #f2f2f2}
-    button{
-        align-items: center;
-        background-color: lightyellow;
-    }
+    tr:nth-child(even) {background-color: #f2f2f2}    
     h2{
         text-align: center;
         font-family: inherit;
@@ -32,9 +27,12 @@
     padding: .67em .67em;
     cursor: pointer;
     }
+    .btn:hover{
+        opacity:0.9;
+    }
     .btn-primary {
     color: white;
-    background-color: #56CCF2;
+    background-color:#606060;
     border: none;
     border-radius: .3em;
     font-weight: bold;
@@ -43,7 +41,8 @@
 </head>
 
 <body>
-<h2>***  Data of Syllabus table  ***</h2>
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
+<h2>Data of Syllabus table</h2>
 
 <br>
 
@@ -66,15 +65,15 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "SELECT * FROM syllabus_settings";
+            $sql = "SELECT * FROM syllabus";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
                     $doc = '../faculty/'. $row['uploads'];
-                    echo "<tr><td>" . $row["sr"]. "</td><td>" . $row["sdrn"]. "</td><td>"
-                    . $row["NameOfFaculty"]. "</td><td>" . $row["University"]. "</td><td>" . $row["Subject"]. "</td><td>" . $row["Semester"]. "</td><td>" . $row["Venue"]. "</td><td>" . $row["Date"]. "</td></tr>";
-                    echo "<td><a href='".$doc."'>$doc </td></a>";
+                    echo "<tr><td>" . $row["Srno"]. "</td><td>" . $row["SDRN"]. "</td><td>"
+                    . $row["Name"]. "</td><td>" . $row["University"]. "</td><td>" . $row["Subject"]. "</td><td>" . $row["Semester"]. "</td><td>" . $row["Venue"]. "</td><td>" . $row["Date"]. "</td>";
+                    echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></td></a></tr>";
                 }
                 echo "</table>";
             } 

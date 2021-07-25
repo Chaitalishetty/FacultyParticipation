@@ -15,23 +15,19 @@
         
         <!--logo-->
         <div style="display:flex;justify-content:space-between">
-            <a href="welcome.php"><img src="images/logo.jpg" height="100px"></a>
-            <h2 class="welcomeHead">Welcome <?php echo $login_session;?>(Admin)</h2>
+        <a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
             <div style="display:flex;justify-content:space-between">
                 <div id="buttons"><a href="../faculty/welcome.php">Faculty</a></div>
                 <div id="buttons"><a href = "logout.php">Sign Out</a></div>
             </div>
         </div>
         <!--header-->
-        
-        <div class="container">
-        </div>
-        
+        <h2 class="welcomeHead">Welcome <?php echo $login_session;?>(Admin)</h2>
         <div class="jumbotron text-center" style="background-color:transparent">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card">
-                      <a href="SortOrientation.php" name="University">UNIVERSITY ORIENTATION</a>
+                      <a href="SortOrientation.php" name="University">COURSE ORIENTATION</a>
                     </div>
                 </div>
                 <div class="col-sm-4">
