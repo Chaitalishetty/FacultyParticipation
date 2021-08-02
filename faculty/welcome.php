@@ -1,5 +1,5 @@
 <?php
-  include('session.php');
+include('session.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,16 +23,16 @@
                     echo '<div id="buttons">
                     <a href="../admin/welcome.php">Admin</a>
                 </div>';
-                }
+            }
             ?>
-            <div id="buttons"><a href = "logout.php">Sign Out</a></div>
-            </div>
-            
+            <div id="buttons"><a href="logout.php">Sign Out</a></div>
         </div>
-       
-        <h2>
+
+    </div>
+
+    <h2>
         <!--header-->
-        
+
         <!-- <div class="container">
              
         </div> -->
@@ -48,16 +48,16 @@
                 </div>                
                 </div>
                 <div class="col-sm-4">
-                <div class="card">
-                    <a href="syllabus1.php" name="Syllabus">SYLLABUS SETTING</a>
+                    <div class="card">
+                        <a href="syllabus1.php" name="Syllabus">SYLLABUS SETTING</a>
+                    </div>
                 </div>
-                </div>     
                 <div class="col-sm-4">
-                <div class="card">
-                    <a href="workshop_new1.php" name="Worshops">WORKSHOPS - STTP - FDP</a>
+                    <div class="card">
+                        <a href="workshop_new1.php" name="Worshops">WORKSHOPS - STTP - FDP</a>
+                    </div>
                 </div>
-                </div>     
-            
+
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -69,13 +69,12 @@
                 <div class="col-sm-4">
                     <a href="UpDelWorkshop.php" name="Worshops" class="up-btn">Update Workshops</a>
                 </div>
+
             </div>
-          
-        </div>
-        
-  
 
 
-    </body>
+
+
+</body>
 
 </html>

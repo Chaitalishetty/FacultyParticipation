@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>Sorted Workshops</title>
@@ -51,7 +52,6 @@
     }
     
 </style>
-
 </head>
 
 
@@ -59,61 +59,58 @@
 <a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
 <h2>Data of Workshop table</h2>
 
-<br>
-
-<div class="container">
-    <center>
-       
-        <form method="post">
-            <input type="date" name="txtStartDate">
-            <input type="date" name="txtEndDate">
-            <input class="name-field" type="text" name="Name_of_Faculty" placeholder="Enter Name of the Faculty">
-
-
-            <input class="search-btn" type="submit" name="search" value="View Record">
-            
-            <a href="workshops_sttp-fdp.php" class="search-btn1">
-                All Records
-            </a>
-
-        </form>
-        
-    </center>
-    
-    <br>
-    
-    <table border="3px">
-       
-        <tr>
-        <th>sr</th>
-        <th>sdrn</th>
-        <th>NameOfFaculty</th>
-        <th>Criteria</th>
-        <th>NameOfWorkshop</th>
-        <th>Sponsorship</th>
-        <th>Venue</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>NoOfDays</th>
-        <th>Organizer</th>
-        <th>level</th>
-        <th>SourceOfFunding</th>
-        <th>RegistrationAmount</th>
-        <th>AmountFunded</th>
-        <th>TA</th>
-        <th>Document</th> 
-        </tr>
-    
     <br>
 
+    <div class="container">
+        <center>
 
-<?php
+            <form method="post">
+                <input type="date" name="txtStartDate">
+                <input type="date" name="txtEndDate">
+                <input class="name-field" type="text" name="Name_of_Faculty" placeholder="Enter Name of the Faculty">
+
+                <input class="search-btn" type="submit" name="search" value="View Record">
+
+                <a href="workshops_sttp-fdp.php" class="search-btn1">
+                    All Records
+                </a>
+
+            </form>
+
+        </center>
+
+        <br>
+
+        <table border="3px">
+
+            <tr>
+                <th>sr</th>
+                <th>sdrn</th>
+                <th>Name_of_Faculty</th>
+                <th>Criteria</th>
+                <th>Name_of_Workshop</th>
+                <th>Sponsorship</th>
+                <th>Venue</th>
+                <th>Start_Date</th>
+                <th>End_Date</th>
+                <th>No_of_days</th>
+                <th>Organizer</th>
+                <th>level</th>
+                <th>Source_of_Funding</th>
+                <th>Registration_Amount</th>
+                <th>Amount_Funded</th>
+                <th>TA</th>
+                <th>Document</th>
+            </tr>
+            <br>
 
 
-$conn = @mysqli_connect("localhost","root","","faculty_par");
-    
-if(!$conn){
-	die("Connection Failed:" .@mysqli_connect_error());
+            <?php
+
+
+$conn = @mysqli_connect("localhost", "root", "", "faculty_par");
+if (!$conn) {
+    die("Connection Failed:" . @mysqli_connect_error());
 }
 
 if(isset($_POST['search']))
@@ -130,13 +127,6 @@ if(isset($_POST['search']))
     
     
 	$count = @mysqli_query($conn,$query);
-
-
-?>
-
-<?php
-
-
     while($row = @mysqli_fetch_array($count)){
         $doc = '../faculty/'. $row['uploads'];
         echo "<tr>
@@ -159,16 +149,15 @@ if(isset($_POST['search']))
         echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></td></a></tr>";
     }       
 }
-
-
 ?>
 
 
 
-</table>
-</div>
+        </table>
+    </div>
 
 </body>
+
 </html>
 
 

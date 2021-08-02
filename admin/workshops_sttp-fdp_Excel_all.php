@@ -1,5 +1,5 @@
-<?php  
-$conn = mysqli_connect("localhost", "root", "", "faculty_par");  
+<?php
+$conn = mysqli_connect("localhost", "root", "", "faculty_par");
 //mysqli_select_db($conn, 'crud');  
 $sql = "SELECT * FROM workshop";  
 $setRec = mysqli_query($conn, $sql);  
@@ -19,7 +19,9 @@ header("Content-type: application/octet-stream");
 header("Content-Disposition: attachment; filename=User_Detail_workshops.xls");  
 header("Pragma: no-cache");  
 header("Expires: 0");  
+header("Content-type: application/octet-stream");
+header("Content-Disposition: attachment; filename=User_Detail_workshops.xls");
+header("Pragma: no-cache");
+header("Expires: 0");
 
-  echo ucwords($columnHeader) . "\n" . $setData . "\n";  
-?> 
- 
+echo ucwords($columnHeader) . "\n" . $setData . "\n";

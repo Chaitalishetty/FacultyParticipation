@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>All Records Workshops</title>
 <style>
@@ -124,4 +125,5 @@ $conn -> close();
 </h2>
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>Sorted Syllabus</title>
@@ -56,56 +57,55 @@
 <a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
 <h2>Data of Syllabus table</h2>
 
-<br>
-
-<div class="container">
-    <center>
-       
-        <form method="post">
-            <input type="date" name="txtStartDate">
-            <input type="date" name="txtEndDate">
-            <input class="name-field" type="text" name="NameOfFaculty" placeholder="Enter Name of the Faculty">
-
-
-            <input class="search-btn" type="submit" name="search" value="View Record">
-            
-            <a href="syllabus_settings.php" class="search-btn1">
-                All Records
-            </a>
-
-            
-        </form>
-        
-    </center>
-    
-    <br>
-    
-    <table border="3px">
-       
-        <tr>
-            <th>sr</th>
-            <th>sdrn</th>
-            <th>NameOfFaculty</th>
-            <th>University</th>
-            <th>Subject</th>
-            <th>Semester</th>
-            <th>Venue</th>
-            <th>Date</th>
-            <th>Document</th> 
-        </tr>
-    
     <br>
 
+    <div class="container">
+        <center>
 
-<?php
+            <form method="post">
+                <input type="date" name="txtStartDate">
+                <input type="date" name="txtEndDate">
+                <input class="name-field" type="text" name="NameOfFaculty" placeholder="Enter Name of the Faculty">
 
 
-$conn = mysqli_connect("localhost","root","","faculty_par");
-    
-if(!$conn){
-	die("Connection Failed:" .mysqli_connect_error());
+                <input class="search-btn" type="submit" name="search" value="View Record">
+
+                <a href="syllabus_settings.php" class="search-btn1">
+                    All Records
+                </a>
+
+
+            </form>
+
+        </center>
+
+        <br>
+
+        <table border="3px">
+
+            <tr>
+                <th>sr</th>
+                <th>sdrn</th>
+                <th>NameOfFaculty</th>
+                <th>University</th>
+                <th>Subject</th>
+                <th>Semester</th>
+                <th>Venue</th>
+                <th>Date</th>
+                <th>Document</th>
+            </tr>
+
+            <br>
+
+
+            <?php
+
+
+            $conn = mysqli_connect("localhost", "root", "", "faculty_par");
+
+if (!$conn) {
+    die("Connection Failed:" . mysqli_connect_error());
 }
-
 if(isset($_POST['search']))
     
 {
@@ -122,14 +122,6 @@ if(isset($_POST['search']))
     
     
 	$count = @mysqli_query($conn,$query);
-
-
-        
-?>
-
-<?php
-
-
     while($row = @mysqli_fetch_array($count)){
         $doc = '../faculty/'. $row['uploads'];
         echo "<tr>"; 
@@ -150,14 +142,11 @@ if(isset($_POST['search']))
 }
 
 
-?>
-
-
-
-</table>
-</div>
+        </table>
+    </div>
 
 </body>
+
 </html>
 
 

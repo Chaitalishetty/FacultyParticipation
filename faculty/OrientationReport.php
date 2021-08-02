@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>orientation</title>
 <style>
@@ -122,31 +123,19 @@ $sdrn=$user_check;
             //}
              
         ?> 
+                </table>
+            </div>
+            <br>
+            <br>
 
-
-    </table>
-</div>
-<br>
-<br>
-
-<h2>
-<a href="orientation_Excel_all.php">
-    <button class="btn btn-primary shop-item-button">Download</button>
-</a>
-</h2>
+            <h2>
+                <a href="orientation_Excel_all.php">
+                    <button class="btn btn-primary shop-item-button">Download</button>
+                </a>
+            </h2>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
 <!--
 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);

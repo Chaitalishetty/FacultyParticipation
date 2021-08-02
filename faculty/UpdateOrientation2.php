@@ -1,3 +1,6 @@
+<style>
+    <?php include 'css/styles.css'; ?>
+</style>
 <?php
 //updating
 // Escape user inputs for security
@@ -34,14 +37,13 @@ if ($file_type=="application/pdf") {
  if(move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder))
 
  {
-
- echo "The file ". basename( $_FILES['file']['name']). " is uploaded<br>";
+    echo ("<div class='alert alert-success'>The file " . basename( $_FILES['file']['name']). " is uploaded </div><br>");
 
  }
 
  else {
 
- echo "Problem uploading file";
+    echo "<div class='alert alert-error'>Problem uploading file </div>";
 
  }
 
@@ -49,7 +51,7 @@ if ($file_type=="application/pdf") {
 
 else {
 
- echo "You may only upload PDFs, JPEGs or GIF files.<br>";
+    echo "<div class='alert alert-error'>You may only upload PDF files. Please update it.</div><br>";
 
 }
 
@@ -58,17 +60,19 @@ else {
 
 $sql ="UPDATE orientation SET SDRN=$sdrn, Name='$name', University='$uni', Subject='$sub', Semester='$sem', Venue='$finalvenue', Date='$date' WHERE Srno=$id3";
 if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
+    echo ("<div class='alert alert-success'>
 
+       Records updated successfully. <br>
+    <a href='welcome.php'>Go back to homepage<br><a> </div>");
 
-    echo "<a href='welcome.php'>Go back to homepage<br><a>";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        echo ("<script>
+    setTimeout(function(){ window.location='welcome.php' }, 8000);
+    </script>");
+    } else {
+        echo "
+    <div class='alert alert-error'>
+    ERROR: Could not able to execute $sql. </div>". mysqli_error($link);
 }
  
 // Close connection
 mysqli_close($link);
-
-
-
-?>

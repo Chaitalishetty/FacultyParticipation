@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Syllabus</title>
 <style>
@@ -57,6 +58,7 @@
     }
 </style>
 </head>
+
 <body>
 <nav class="navbar">
 <a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
@@ -131,14 +133,3 @@ $sdrn=$user_check;
 </h2>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

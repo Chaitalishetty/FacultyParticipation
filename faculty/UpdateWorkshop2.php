@@ -75,7 +75,7 @@ else {
 
 $sql = "UPDATE workshop SET SDRN=$sdrn, Name='$name', criteria='$cri', Name_workshop='$sem', sponsor='$spon', venue='$newven',sdate='$dateto',edate='$datefrom',ndays='$num',organiser='$org',org_type='$choose',sfunding='$finalsrc',ramount='$reg',amount_funded='$fund',TA='$ta1' WHERE Srno=$id3";
 if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
+    echo "Records updated successfully.";
     echo "<a href='welcome.php'>Go back to homepage<br><a>";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);

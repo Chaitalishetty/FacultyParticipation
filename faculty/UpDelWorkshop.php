@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Worshops</title>
 <style>
@@ -61,14 +62,6 @@
 <a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
 <h2>Data of Workshops Attended</h2>
 
-<br>
-
-<div class="container">
-    <center>
-    <form action="" method="post">
-     
-    </form>
-    </center>
     <br>
     <table>
     
@@ -134,12 +127,13 @@ $sdrn=$user_check;
                     echo "</tr>";
                 }
             //}   
-        ?> 
-    </table>
-</div>
-<br>
-<br>
-<h2>
-</h2>
+            ?>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2>
+    </h2>
 </body>
+
 </html>

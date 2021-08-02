@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Syllabus</title>
 <style>
@@ -62,12 +63,6 @@
 <h2>Data of Syllabus</h2>
 <br>
 
-<div class="container">
-    <center>
-    <form action="" method="post">
-     
-    </form>
-    </center>
     <br>
     <table>
     
@@ -117,12 +112,13 @@ $sdrn=$user_check;
                     echo "</tr>";
                 }
             //}   
-        ?> 
-    </table>
-</div>
-<br>
-<br>
-<h2>
-</h2>
+            ?>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h2>
+    </h2>
 </body>
+
 </html>
