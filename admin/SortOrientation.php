@@ -5,67 +5,58 @@
 
     <title>Sorted Orientation</title>
 
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            color: #588c7e;
-            font-family: monospace;
-            font-size: 25px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #c9243f;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2
-        }
-
-        h2 {
-            text-align: center;
-            font-family: inherit;
-            color: slategray;
-        }
-
-        .search-btn {
-            text-align: center;
-            vertical-align: middle;
-            padding: .57em .57em;
-            cursor: pointer;
-            background-color: #4CBB17;
-            color: white;
-        }
-
-        .search-btn1 {
-            text-align: center;
-            vertical-align: middle;
-            padding: .57em .57em;
-            cursor: pointer;
-            background-color: skyblue;
-            color: black;
-            text-decoration: none;
-            font-family: serif;
-        }
-
-        .name-field {
-            text-align: center;
-            vertical-align: middle;
-            padding: .37em .37em;
-
-        }
-    </style>
-
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        color: #737373;
+        font-size: 25px;
+        text-align: center;
+    }
+    th {
+        padding: 10px;
+        background-color: #C10223;
+        color: white;
+    }
+    tr:nth-child(even) {background-color: #f2f2f2}    
+    h2{
+        text-align: center;
+        font-family: inherit;
+        color: slategray;
+    }
+    
+    .search-btn{
+        text-align: center;
+        vertical-align: middle;
+        padding: .57em .57em;
+        cursor: pointer;
+        background-color: #4CBB17;
+        color: white;
+    }
+    
+    .search-btn1{
+        text-align: center;
+        vertical-align: middle;
+        padding: .57em .57em;
+        cursor: pointer;
+        background-color: skyblue;
+        color: black;
+        text-decoration: none;
+        font-family: serif;
+    }
+    
+    .name-field{
+        text-align: center;
+        vertical-align: middle;
+        padding: .37em .37em;
+        
+    }  
+</style>
 </head>
-
-
 <body>
-
-    <h2>*** Data of University Orientation table ***</h2>
-
-    <br>
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
+<h2>Data of Course Orientation table</h2>
+<br>
 
     <div class="container">
         <center>
@@ -127,31 +118,18 @@
 
             ?>
 
-            <?php
-
-
-                while ($row = @mysqli_fetch_array($count)) {
-
-                    echo "<tr>";
-                    $doc = '../faculty/' . $row['uploads'];
-                    //echo "<td>" . $row['1'] . "</td>"; 
-                    echo "<td>" . $row['SDRN'] . "</td>";
-                    echo "<td>" . $row['Name'] . "</td>";
-                    echo "<td>" . $row['Subject'] . "</td>";
-                    echo "<td>" . $row['Semester'] . "</td>";
-                    echo "<td>" . $row['Venue'] . "</td>";
-                    echo "<td>" . $row['Date'] . "</td>";
-                    echo "<td><a href='" . $doc . "'>Doc </td></a>";
-
-
-                    echo "</tr>";
-                }
-            }
-
-
-            ?>
-
-
+    while($row = @mysqli_fetch_array($count)){
+        
+        echo "<tr>"; 
+        $doc = '../faculty/'. $row['uploads'];
+            //echo "<td>" . $row['1'] . "</td>"; 
+	        echo "<td>" . $row['SDRN'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>"; 
+            echo "<td>" . $row['Subject'] . "</td>";
+            echo "<td>" . $row['Semester'] . "</td>";
+            echo "<td>" . $row['Venue'] . "</td>";
+            echo "<td>" . $row['Date'] . "</td>";
+            echo "<td><a href='".$doc."'><img src='images/doc.png' style='width:20px'></td></a>";
 
         </table>
     </div>

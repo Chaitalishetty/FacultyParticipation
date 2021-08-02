@@ -2,18 +2,17 @@
 <html>
 <head>
 <title>orientation</title>
-<style>
-    
+<style>   
     table {
         border-collapse: collapse;
         width: 100%;
-        color: #588c7e;
-        font-family: monospace;
+        color: #737373;
         font-size: 25px;
-        text-align: left;
+        text-align: center;
     }
     th {
-        background-color: #588c7e;
+        padding: 10px;
+        background-color: #C10223;
         color: white;
     }
     tr:nth-child(even) {background-color: #f2f2f2}
@@ -24,7 +23,7 @@
     h2{
         text-align: center;
         font-family: inherit;
-        color: slategray;
+        color: #3e3e3e;
     }
     .btn {
     text-align: center;
@@ -32,9 +31,12 @@
     padding: .67em .67em;
     cursor: pointer;
     }
+    .btn:hover{
+        opacity:0.9;
+    }
     .btn-primary {
     color: white;
-    background-color: #56CCF2;
+    background-color:#606060;
     border: none;
     border-radius: .3em;
     font-weight: bold;
@@ -56,7 +58,8 @@
 </style>
 </head>
 <body>
-<h2>***  Data of Orientation Attended  ***</h2>
+<a href="welcome.php"><img src="images/logo.png" style="height:10vh;width:auto"></a>
+<h2>Data of Orientation Attended</h2>
 
 <br>
 
@@ -110,8 +113,8 @@ $sdrn=$user_check;
                             echo "<td>" . $row['Semester'] . "</td>";
                             echo "<td>" . $row['Venue'] . "</td>";
                             echo "<td>" . $row['Date'] . "</td>";
-							echo "<td>". "<a href=UpdateOrientation1.php?id=".$row['Srno'].">"."Update"."</a>". "</td>";
-							echo "<td>". "<a href=DeleteOrientation.php?id=".$row['Srno'].">"."Delete"."</a>". "</td>";
+							echo "<td>". "<a href=UpdateOrientation1.php?id=".$row['Srno'].">"."<img src='images/edit.png' style='width:20px'>"."</a>". "</td>";
+							echo "<td>". "<a href=DeleteOrientation.php?id=".$row['Srno'].">"."<img src='images/delete.png' style='width:20px'>"."</a>". "</td>";
                     echo "</tr>";
                 }
             //}   
