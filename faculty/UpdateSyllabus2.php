@@ -25,9 +25,9 @@ $finalvenue= ($ven =='Other') ?  $newven : $ven;
 $filename = $_FILES["file"]["name"];
 $temp = explode(".", $filename); //sep filename and extension
 $file_ext = substr($filename, strripos($filename, '.')); //getting extension
-$newfilename = $sdrn . '_' . $name . '_' . $sub . '_s_' . $date  . '_updated' . $file_ext;
-$targetfolder = "uploads/" . $newfilename;
- $ok=1;
+$newfilename = $sdrn . '_' . $name . '_' . $sub . '_syllabus_' . $date . $file_ext;
+$ok = 1;
+$targetfolder = "uploads/Syllabus/" . $newfilename;
 
 $file_type=$_FILES['file']['type'];
 

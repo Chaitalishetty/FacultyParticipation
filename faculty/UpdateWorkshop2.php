@@ -42,9 +42,8 @@ $finalvenue= ($src =='Other') ?  $newven : $ven;
  $temp = explode(".", $filename); //sep filename and extension
  $file_ext = substr($filename, strripos($filename, '.')); //getting extension
  $newfilename = $sdrn . '_' . $name . '_' . $cri . '_' . $sem . '_' . $org . '_' . $datefrom . $file_ext;
- $targetfolder = "uploads/" . $newfilename;
-
- $ok=1;
+ $ok = 1;
+ $targetfolder = "uploads/Workshop/" . $newfilename;
 
 $file_type=$_FILES['file']['type'];
 

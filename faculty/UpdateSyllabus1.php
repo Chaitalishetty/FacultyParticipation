@@ -113,7 +113,7 @@ mysqli_close($link);
           <input type="date" class="form-control" value="<?php echo $row['Date']; ?>" name="Date" data-date="" data-date-format="DD/MM/YYYY" placeholder="DD/MM/YYYY">
         </div>
         <div>
-          <input type="file" class="form-control" name="file" size="50" required /><br>
+          <input type="file" class="form-control" name="file" size="50" /><br>
           <input type="submit" class="btn btn-danger" name="Next" action="UpdateSyllabus2.php?id2=<?php echo $ids; ?>">
           <input type="reset" class="btn btn-danger" value="Clear">
           <a href="welcome.php" class="btn btn-danger">Go back to homepage</a>

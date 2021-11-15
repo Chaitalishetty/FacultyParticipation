@@ -25,7 +25,7 @@ $temp = explode(".", $filename);
 $file_ext = substr($filename, strripos($filename, '.'));
 $newfilename = $sdrn . '_' . $name . '_' . $sub . '_syllabus_' . $date . $file_ext;
 $ok = 1;
-$targetfolder = "uploads/" . $newfilename;
+$targetfolder = "uploads/Syllabus/" . $newfilename;
 $file_type = $_FILES['file']['type'];
 
 

@@ -22,7 +22,7 @@ $temp = explode(".", $filename); //sep filename and extension
 $file_ext = substr($filename, strripos($filename, '.')); //getting extension
 $newfilename = $sdrn . '_' . $name . '_' . $sub . '_orientation_' . $date . $file_ext; //giving new name
 $ok = 1;
-$targetfolder = "uploads/" . $newfilename;
+$targetfolder = "uploads/Orientation/" . $newfilename;
 $file_type = $_FILES['file']['type'];
 
 // checking duplicate entry 

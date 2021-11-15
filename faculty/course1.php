@@ -7,7 +7,7 @@ include('session.php');
 <head>
 
   <meta charset="utf-8">
-  <title>Workshop</title>
+  <title>Courses</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="manifest" href="site.webmanifest">
@@ -31,7 +31,7 @@ include('session.php');
 
         <h1>
           <div class="login100-form-title">
-          WORKSHOPS - STTP - FDP 
+      Courses
           </div>
         </h1>
         <div class="formGroup">

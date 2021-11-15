@@ -25,8 +25,8 @@ $finalvenue= ($ven =='Other') ?  $newven : $ven;
 $filename = $_FILES["file"]["name"];
 $temp = explode(".", $filename); //sep filename and extension
 $file_ext = substr($filename, strripos($filename, '.')); //getting extension
-$newfilename = $sdrn . '_' . $name . '_' . $sub . '_o_' . $date  . '_updated' . $file_ext;
-$targetfolder = "uploads/" . $newfilename;
+$newfilename = $sdrn . '_' . $name . '_' . $sub . '_orientation_' . $date . $file_ext;;
+$targetfolder = "uploads/Orientation/" . $newfilename;
 
 // $targetfolder = $targetfolder . basename( $_FILES['file']['name']) ;
 

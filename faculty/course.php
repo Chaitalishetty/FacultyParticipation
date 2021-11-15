@@ -39,12 +39,12 @@ $temp = explode(".", $filename);
 $file_ext = substr($filename, strripos($filename, '.'));
 $newfilename = $sdrn . '_' . $name . '_' . $cri . '_' . $sem . '_' . $org . '_' . $datefrom . $file_ext;
 $ok = 1;
-$targetfolder = "uploads/Workshop/" . $newfilename;
+$targetfolder = "uploads/Course/" . $newfilename;
 $file_type = $_FILES['file']['type'];
 
 
 // checking duplicate entry 
-$query = "SELECT uploads FROM workshop WHERE SDRN = '$sdrn' ";
+$query = "SELECT uploads FROM course WHERE SDRN = '$sdrn' ";
 
 $count = @mysqli_query($link, $query);
 $flag = 0;
